@@ -18,6 +18,9 @@ export const LINKS = {
 } as const;
 
 export const COPY = {
+  meta: {
+    title: 'Keel | Liquidity risk intelligence for Stellar',
+  },
   nav: {
     howItWorks: 'How it works',
     dashboard: 'Dashboard',
@@ -185,5 +188,24 @@ export const COPY = {
           'Every number carries the ledger it was read at and the methodology version that produced it, so anyone can reproduce it.',
       },
     ],
+  },
+  /** Section 7. */
+  closing: {
+    title: 'Check the market behind the price.',
+    primaryCta: 'Check an asset',
+    secondaryCta: 'Read the methodology',
+    footerLines: [
+      'Keel reports liquidity. The lender decides.',
+      'Not an oracle. Not investment advice.',
+    ],
+  },
+  footer: {
+    links: [
+      ['Dashboard', LINKS.dashboard],
+      ['API docs', LINKS.apiDocs],
+      ['Methodology', LINKS.methodology],
+      ['GitHub', LINKS.github],
+      ['keel-mcp', LINKS.mcp],
+    ] as [string, string][],
   },
 } as const;

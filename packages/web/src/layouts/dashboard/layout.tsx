@@ -17,6 +17,8 @@ import type { LayoutSectionProps } from '../core/layout-section';
 type LayoutBaseProps = Pick<LayoutSectionProps, 'sx' | 'children' | 'cssVars'>;
 
 export type DashboardLayoutProps = LayoutBaseProps & {
+  /** The footer's provenance line, from the hero's reading. */
+  provenance?: string;
   slotProps?: {
     main?: MainSectionProps;
   };
@@ -24,7 +26,13 @@ export type DashboardLayoutProps = LayoutBaseProps & {
 
 const HEADER_H = { xs: 64, lg: 72 };
 
-export function DashboardLayout({ sx, cssVars, children, slotProps }: DashboardLayoutProps) {
+export function DashboardLayout({
+  sx,
+  cssVars,
+  children,
+  slotProps,
+  provenance,
+}: DashboardLayoutProps) {
   const theme = useTheme();
 
   const renderNavbar = () => (
@@ -48,7 +56,7 @@ export function DashboardLayout({ sx, cssVars, children, slotProps }: DashboardL
   return (
     <LayoutSection
       headerSection={renderNavbar()}
-      footerSection={<FooterSection />}
+      footerSection={<FooterSection provenance={provenance} />}
       cssVars={{ ...dashboardLayoutVars(theme), ...cssVars }}
       sx={sx}
     >

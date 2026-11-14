@@ -4,6 +4,8 @@ import * as React from 'react';
 
 import Box from '@mui/material/Box';
 
+import { COPY, LINKS } from '../copy';
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -75,7 +77,80 @@ export const CtaImage: React.FC<CtaImageProps> = (sectionProps) => (
         flexDirection: 'column',
         alignItems: 'center',
       }}
-    />
+    >
+      {/* Heading */}
+      <Box
+        component="h2"
+        id="cta-heading"
+        sx={{
+          m: 0,
+          fontSize: 'clamp(40px, 6vw, 80px)',
+          fontWeight: 500,
+          letterSpacing: '-0.03em',
+          lineHeight: 1.08,
+          color: '#fff',
+        }}
+      >
+        {COPY.closing.title}
+      </Box>
+
+      {/* Buttons */}
+      <Box
+        sx={{
+          mt: '30px',
+          display: 'inline-flex',
+          gap: '10px',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+        }}
+      >
+        <Box
+          component="a"
+          href={LINKS.dashboard}
+          sx={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            height: 48,
+            px: '24px',
+            borderRadius: '999px',
+            bgcolor: '#fff',
+            color: '#0A0A0F',
+            fontSize: '14px',
+            fontWeight: 500,
+            textDecoration: 'none',
+            transition: 'background 150ms, transform 150ms',
+            '&:hover': { bgcolor: 'rgba(255,255,255,0.92)', transform: 'translateY(-1px)' },
+          }}
+        >
+          {COPY.closing.primaryCta}
+        </Box>
+        <Box
+          component="a"
+          href={LINKS.methodology}
+          sx={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            height: 48,
+            px: '24px',
+            borderRadius: '999px',
+            bgcolor: 'rgba(255,255,255,0.08)',
+            color: '#fff',
+            fontSize: '14px',
+            fontWeight: 500,
+            textDecoration: 'none',
+            border: '1px solid rgba(255,255,255,0.16)',
+            transition: 'background 150ms, border-color 150ms, transform 150ms',
+            '&:hover': {
+              bgcolor: 'rgba(255,255,255,0.14)',
+              borderColor: 'rgba(255,255,255,0.24)',
+              transform: 'translateY(-1px)',
+            },
+          }}
+        >
+          {COPY.closing.secondaryCta}
+        </Box>
+      </Box>
+    </Box>
   </Box>
 );
 

@@ -2101,24 +2101,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify/react@npm:^5.1.0":
-  version: 5.2.1
-  resolution: "@iconify/react@npm:5.2.1"
-  dependencies:
-    "@iconify/types": ^2.0.0
-  peerDependencies:
-    react: ">=16"
-  checksum: 256dd60e197d63eac6aff193aff04336d11172af4b20891fa30286b0615e46c2d7ad53a345919f5e446e45838815e48b1cf16f2c743ac80862cf3adf20a73824
-  languageName: node
-  linkType: hard
-
-"@iconify/types@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@iconify/types@npm:2.0.0"
-  checksum: 029f58542c160e9d4a746869cf2e475b603424d3adf3994c5cc8d0406c47e6e04a3b898b2707840c1c5b9bd5563a1660a34b110d89fce43923baca5222f4e597
-  languageName: node
-  linkType: hard
-
 "@img/sharp-darwin-arm64@npm:0.33.5":
   version: 0.33.5
   resolution: "@img/sharp-darwin-arm64@npm:0.33.5"
@@ -9051,7 +9033,6 @@ __metadata:
     "@fontsource-variable/nunito-sans": ^5.1.1
     "@fontsource/barlow": ^5.1.1
     "@fontsource/geist-mono": ^5.2.8
-    "@iconify/react": ^5.1.0
     "@mui/icons-material": ^7.2.0
     "@mui/lab": ^6.0.0-beta.21
     "@mui/material": ^6.3.0
