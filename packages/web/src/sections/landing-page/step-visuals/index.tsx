@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import { OffersVisual } from './offers-visual';
 import { LastTradeVisual } from './last-trade-visual';
 
 export * from './step-visual';
@@ -11,4 +12,5 @@ export * from './step-visual';
  */
 export const STEP_VISUALS: Readonly<Partial<Record<number, ReactNode>>> = {
   1: <LastTradeVisual />,
+  2: <OffersVisual />,
 };

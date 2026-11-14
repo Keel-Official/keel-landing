@@ -80,7 +80,7 @@ Visual: a row of past trades as dots; the last one is solid and labelled "Last t
 **What matters is what stands behind it.**
 Behind every price on Stellar are open offers to buy and sell, in the order book and in liquidity pools. The more of them there are, the harder the price is to move. [Validate]
 
-Visual: offers stack up behind the price.
+Visual: the price as a solid dot labelled "Price"; small blocks for open offers stack up on both sides of it, taller further from the price, labelled "Offers to buy" and "Offers to sell". No numbers.
 
 ### Step 3
 
