@@ -31,7 +31,7 @@ html {
   -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "ss01", "ss03";
+  font-feature-settings: 'ss01', 'ss03';
   text-rendering: optimizeLegibility;
 }
 body,

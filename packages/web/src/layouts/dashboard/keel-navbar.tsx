@@ -1,12 +1,60 @@
 'use client';
 
-import { Box } from '@mui/material';
+import { useState } from 'react';
+import { m } from 'framer-motion';
+import { COPY, LINKS } from '@/sections/landing-page/copy';
+
 import { alpha, useTheme } from '@mui/material/styles';
+import { Box, Button, IconButton } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
+const NAV_LINKS: { label: string; url: string }[] = [
+  { label: COPY.nav.howItWorks, url: LINKS.howItWorks },
+  { label: COPY.nav.dashboard, url: LINKS.dashboard },
+  { label: COPY.nav.apiDocs, url: LINKS.apiDocs },
+  { label: COPY.nav.methodology, url: LINKS.methodology },
+];
+
+const lineStyle: React.CSSProperties = {
+  display: 'block',
+  width: '1.0rem',
+  height: 2,
+  margin: '2px 0',
+  backgroundColor: 'currentColor',
+  borderRadius: 9999,
+};
+
+const topLineVariants = {
+  open: { translateY: 6, rotate: -45, transition: { duration: 0.2 } },
+  closed: { translateY: 0, rotate: 0, transition: { duration: 0.2 } },
+};
+
+const middleLineVariants = {
+  open: { width: 0, transition: { duration: 0.1 } },
+  closed: { width: '1.0rem', transition: { duration: 0.2 } },
+};
+
+const bottomLineVariants = {
+  open: { translateY: -6, rotate: 45, transition: { duration: 0.2 } },
+  closed: { translateY: 0, rotate: 0, transition: { duration: 0.2 } },
+};
+
 export function KeelNavbar() {
   const theme = useTheme();
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const linkSx = {
+    textTransform: 'none',
+    py: '6px',
+    px: '12px',
+    fontSize: '14px',
+    color: 'text.primary',
+    fontWeight: 500,
+    borderRadius: '999px',
+    minWidth: 'unset',
+    '&:hover': { background: alpha(theme.palette.text.primary, 0.06) },
+  } as const;
 
   return (
     <Box
@@ -17,9 +65,8 @@ export function KeelNavbar() {
         top: 0,
         zIndex: (_theme) => _theme.zIndex.appBar,
         display: 'flex',
+        flexDirection: 'column',
         width: '100%',
-        alignItems: 'center',
-        justifyContent: 'space-between',
         borderBottom: '1px solid rgba(10,10,15,0.04)',
         background:
           theme.palette.mode === 'dark'
@@ -27,7 +74,6 @@ export function KeelNavbar() {
             : 'rgba(250,250,251,0.72)',
         backdropFilter: 'blur(14px) saturate(140%)',
         WebkitBackdropFilter: 'blur(14px) saturate(140%)',
-        minHeight: { xs: 64, lg: 72 },
         px: { xs: 2, lg: 4 },
       }}
     >
@@ -36,8 +82,11 @@ export function KeelNavbar() {
           width: '100%',
           maxWidth: 1400,
           mx: 'auto',
-          display: 'flex',
+          minHeight: { xs: 64, lg: 72 },
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr auto', lg: 'auto 1fr' },
           alignItems: 'center',
+          columnGap: 2,
         }}
       >
         {/* Text wordmark until Al supplies a logo. */}
@@ -47,6 +96,7 @@ export function KeelNavbar() {
           sx={{
             display: 'inline-flex',
             alignItems: 'center',
+            justifySelf: 'start',
             borderRadius: '999px',
             px: '10px',
             py: '6px',
@@ -61,7 +111,81 @@ export function KeelNavbar() {
         >
           Keel
         </Box>
+
+        {/* Links: desktop */}
+        <Box
+          component="nav"
+          aria-label="Primary"
+          sx={{ display: { xs: 'none', lg: 'flex' }, alignItems: 'center', gap: 0.5 }}
+        >
+          {NAV_LINKS.map((link) => (
+            <Button key={link.url} component="a" href={link.url} sx={linkSx}>
+              {link.label}
+            </Button>
+          ))}
+        </Box>
+
+        {/* Menu button: mobile */}
+        <IconButton
+          onClick={() => setMobileOpen((open) => !open)}
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
+          aria-controls="keel-mobile-nav"
+          sx={{
+            display: { xs: 'inline-flex', lg: 'none' },
+            width: 32,
+            height: 32,
+            p: 0,
+            color: 'text.primary',
+          }}
+        >
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <m.span
+              style={lineStyle}
+              animate={mobileOpen ? 'open' : 'closed'}
+              variants={topLineVariants}
+            />
+            <m.span
+              style={lineStyle}
+              animate={mobileOpen ? 'open' : 'closed'}
+              variants={middleLineVariants}
+            />
+            <m.span
+              style={lineStyle}
+              animate={mobileOpen ? 'open' : 'closed'}
+              variants={bottomLineVariants}
+            />
+          </Box>
+        </IconButton>
       </Box>
+
+      {/* Links: mobile */}
+      {mobileOpen ? (
+        <Box
+          component="nav"
+          id="keel-mobile-nav"
+          aria-label="Primary"
+          sx={{
+            display: { xs: 'flex', lg: 'none' },
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            pb: 2,
+            gap: 0.5,
+          }}
+        >
+          {NAV_LINKS.map((link) => (
+            <Button
+              key={link.url}
+              component="a"
+              href={link.url}
+              onClick={() => setMobileOpen(false)}
+              sx={linkSx}
+            >
+              {link.label}
+            </Button>
+          ))}
+        </Box>
+      ) : null}
     </Box>
   );
 }

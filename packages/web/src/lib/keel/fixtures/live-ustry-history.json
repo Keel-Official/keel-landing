@@ -32,10 +32,7 @@
       "manipulationCost50Pct": "270402.22025317176317678233355",
       "maxSafeCollateral": "67600.5550632929407941955833875",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65050937,
@@ -47,10 +44,7 @@
       "manipulationCost50Pct": "267761.03710317660152502816892",
       "maxSafeCollateral": "66940.25927579415038125704223",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65068218,
@@ -62,10 +56,7 @@
       "manipulationCost50Pct": "274325.06948899016470298073125",
       "maxSafeCollateral": "68581.2673722475411757451828125",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65085497,
@@ -77,10 +68,7 @@
       "manipulationCost50Pct": "269676.50487052055027068356082",
       "maxSafeCollateral": "67419.126217630137567670890205",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65102777,
@@ -92,10 +80,7 @@
       "manipulationCost50Pct": "271263.08136037596968843349689",
       "maxSafeCollateral": "67815.7703400939924221083742225",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65120057,
@@ -107,10 +92,7 @@
       "manipulationCost50Pct": "266966.7341203199909266020184",
       "maxSafeCollateral": "66741.6835300799977316505046",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65137337,
@@ -122,10 +104,7 @@
       "manipulationCost50Pct": "278868.22467189181118310551606",
       "maxSafeCollateral": "69717.056167972952795776379015",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65154617,
@@ -137,10 +116,7 @@
       "manipulationCost50Pct": "262063.28530472291655173057668",
       "maxSafeCollateral": "65515.82132618072913793264417",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65171897,
@@ -152,10 +128,7 @@
       "manipulationCost50Pct": "269515.813391419087807803978",
       "maxSafeCollateral": "67378.9533478547719519509945",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65189177,
@@ -167,10 +140,7 @@
       "manipulationCost50Pct": "266719.62028644142557373477636",
       "maxSafeCollateral": "66679.90507161035639343369409",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65206457,
@@ -182,10 +152,7 @@
       "manipulationCost50Pct": "271233.9348627057841645032936",
       "maxSafeCollateral": "67808.4837156764460411258234",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65223737,
@@ -197,10 +164,7 @@
       "manipulationCost50Pct": "267899.77439152367205536903283",
       "maxSafeCollateral": "66974.9435978809180138422582075",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65241017,
@@ -212,10 +176,7 @@
       "manipulationCost50Pct": "265554.38720476282959395139104",
       "maxSafeCollateral": "66388.59680119070739848784776",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65258297,
@@ -227,10 +188,7 @@
       "manipulationCost50Pct": "262153.7691514116130585385705",
       "maxSafeCollateral": "65538.442287852903264634642625",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65275526,
@@ -242,10 +200,7 @@
       "manipulationCost50Pct": "266212.65093398516350785059796",
       "maxSafeCollateral": "66553.16273349629087696264949",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65292806,
@@ -257,10 +212,7 @@
       "manipulationCost50Pct": "274568.46297536398574890338196",
       "maxSafeCollateral": "68642.11574384099643722584549",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65310086,
@@ -272,10 +224,7 @@
       "manipulationCost50Pct": "272608.14830990741327724816912",
       "maxSafeCollateral": "68152.03707747685331931204228",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65327365,
@@ -287,10 +236,7 @@
       "manipulationCost50Pct": "269459.82236126133254836097831",
       "maxSafeCollateral": "67364.9555903153331370902445775",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65344645,
@@ -302,10 +248,7 @@
       "manipulationCost50Pct": "258493.72994042519868596949504",
       "maxSafeCollateral": "64623.43248510629967149237376",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65361925,
@@ -317,10 +260,7 @@
       "manipulationCost50Pct": "260115.41678207227912953916453",
       "maxSafeCollateral": "65028.8541955180697823847911325",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65379205,
@@ -332,10 +272,7 @@
       "manipulationCost50Pct": "274328.65737486125572119225922",
       "maxSafeCollateral": "68582.164343715313930298064805",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65380105,
@@ -347,10 +284,7 @@
       "manipulationCost50Pct": "275190.19337697033252285416446",
       "maxSafeCollateral": "68797.548344242583130713541115",
       "band": "HIGH",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "HOLDER_CONCENTRATION_HIGH"
-      ]
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "HOLDER_CONCENTRATION_HIGH"]
     },
     {
       "ledgerSeq": 65461959,

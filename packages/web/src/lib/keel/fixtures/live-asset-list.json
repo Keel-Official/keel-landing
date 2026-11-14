@@ -17,11 +17,7 @@
       "maxSafeCollateral": "1.012580194746889408072487501873894922680590999872",
       "band": "HIGH",
       "bandConfidence": "partial",
-      "flags": [
-        "HOLDER_CONCENTRATION_EXTREME",
-        "THIN_DEPTH_5PCT",
-        "HOLDER_CONCENTRATION_HIGH"
-      ],
+      "flags": ["HOLDER_CONCENTRATION_EXTREME", "THIN_DEPTH_5PCT", "HOLDER_CONCENTRATION_HIGH"],
       "ledgerSeq": 65459785
     }
   ],
