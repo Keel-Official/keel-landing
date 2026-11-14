@@ -1,5 +1,5 @@
 import type { ColorSystem } from '@mui/material/styles';
-import type { SettingsState } from '@/components/template/settings';
+import type { SettingsState } from '@/components/template/settings/types';
 
 import { setFont, hexToRgbChannel, createPaletteChannel } from 'minimal-shared/utils';
 

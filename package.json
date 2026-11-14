@@ -1,6 +1,6 @@
 {
-  "name": "@normalfinance/normal-v1-interface",
-  "description": "🌈 Open source interfaces for the Normal protocol",
+  "name": "keel-landing",
+  "description": "Keel landing page",
   "version": "1.7.2",
   "scripts": {
     "changeset": "changeset",
@@ -9,30 +9,15 @@
     "test": "turbo run test",
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "dev:web": "turbo run dev --filter=@normalfinance/web",
-    "dev:experimental": "yarn workspace @normalfinance/web dev:experimental",
-    "build:web": "turbo run build --filter=@normalfinance/web",
-    "build:contracts": "turbo run build --filter=@normalfinance/contracts",
-    "build:state": "turbo run build --filter=@normalfinance/state",
-    "build:utils": "turbo run build --filter=@normalfinance/utils",
-    "build:types": "turbo run build --filter=@normalfinance/types",
+    "dev:web": "turbo run dev --filter=keel-web",
+    "dev:experimental": "yarn workspace keel-web dev:experimental",
+    "build:web": "turbo run build --filter=keel-web",
     "clean": "rm -rf node_modules .turbo yarn.lock && rm -rf packages/*/{node_modules,.next,.swc,dist,build,tsconfig.tsbuildinfo,.turbo}",
     "setup": "yarn install && yarn build",
     "refresh": "yarn run clean && yarn run setup",
-    "goldsky:testnet": "NEXT_PUBLIC_NETWORK=testnet node packages/goldsky/generate-config.js testnet",
-    "goldsky:mainnet": "NEXT_PUBLIC_NETWORK=mainnet node packages/goldsky/generate-config.js mainnet",
     "prepare": "husky"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/normalfinance/normal-v1-interface.git"
-  },
-  "author": "Normal",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/normalfinance/normal-v1-interface/issues"
-  },
-  "homepage": "https://github.com/normalfinance/normal-v1-interface",
   "workspaces": [
     "packages/contracts",
     "packages/types",
@@ -41,7 +26,6 @@
     "packages/web"
   ],
   "devDependencies": {
-    "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.1",
     "@tsconfig/recommended": "^1.0.2",
     "@types/jest": "^29.5.2",
@@ -63,22 +47,8 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@fontsource/figtree": "^5.2.8",
-    "@stellar/stellar-sdk": "^14.4.3",
-    "@stellar/typescript-wallet-sdk": "^1.9.0",
-    "@upstash/ratelimit": "^2.0.5",
-    "@upstash/redis": "^1.35.1",
-    "@vercel/analytics": "^2.0.1",
-    "@vercel/speed-insights": "^2.0.0",
-    "@walletconnect/modal": "^2.6.2",
-    "@walletconnect/sign-client": "^2.13.1",
-    "@walletconnect/types": "^2.13.1",
     "clsx": "^2.1.1",
-    "copy-to-clipboard": "^3.3.3",
-    "dotted-map": "^2.2.3",
-    "jose": "^6.1.0",
-    "motion": "^10",
     "next": "15.0.5",
-    "prisma": "6.18.0",
     "simplex-noise": "^4.0.3",
     "tailwind-merge": "^3.3.1"
   }

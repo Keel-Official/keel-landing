@@ -6,7 +6,6 @@ import importPlugin from 'eslint-plugin-import';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import perfectionistPlugin from 'eslint-plugin-perfectionist';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
-import i18nextPlugin from 'eslint-plugin-i18next';
 
 // ----------------------------------------------------------------------
 
@@ -230,22 +229,12 @@ export const customConfig = {
         project: './tsconfig.json',
       },
     },
-    // ------------------------------------------------------------------
-    // i18next plugin settings – enable rules like `no-missing-key` by
-    // telling the plugin where the translation JSON files are located.
-    // The placeholders `{{lng}}` and `{{ns}}` are understood by the plugin.
-    i18next: {
-      path: 'src/locales/langs/{{lng}}/{{ns}}.json',
-      // langs: ['en', 'fr', 'vi', 'cn', 'ar'], // uncomment to lint only these
-    },
   },
   rules: {
     ...commonRules(),
     ...importRules(),
     ...unusedImportsRules(),
     ...sortImportsRules(),
-    // i18n translation rules
-    'i18next/no-literal-string': 'off',
     // Translations are retired (2026-08-06, English-only): the reminder to
     // add dynamic keys to locale files no longer has an audience. The t()
     // runtime stays — its keys ARE the English strings.
@@ -267,32 +256,17 @@ export default [
   eslintJs.configs.recommended,
   ...eslintTs.configs.recommended,
   reactPlugin.configs.flat.recommended,
-  i18nextPlugin.configs['flat/recommended'],
   customConfig,
   // -------------------------------------------------------------------
   // Console hygiene (doc 114): browser consoles must stay silent for real
   // users — balances, tx hashes and keyed-URL-bearing error objects were
-  // printing via F12. Client code uses the dev-gated `logger` from
-  // @normalfinance/utils (a no-op in production); raw console is a lint
+  // printing via F12. Client code uses the dev-gated `logger`; raw console is a lint
   // ERROR so it cannot come back. Server-side code is exempt: its output
   // goes to the Vercel function logs, not to any user's browser, and
   // several lines there are load-bearing operational signals.
   { rules: { 'no-console': 2 } },
   {
     files: [
-      'src/app/api/**',
-      'src/server/**',
-      'src/services/**',
-      'src/middleware.ts',
-      // server-only lib modules (imported by routes/cron, never by browser
-      // bundles) whose warnings must reach the Vercel logs in production:
-      'src/lib/portfolio/aggregate.ts',
-      'src/lib/cctp/executor.ts',
-      'src/lib/cctp/iris.ts',
-      'src/lib/cctp/state.ts',
-      'src/lib/edge-config-middleware.ts',
-      // the dev-gated sinks themselves:
-      'src/utils/logger.ts',
       // tests are never shipped:
       '**/*.test.*',
     ],

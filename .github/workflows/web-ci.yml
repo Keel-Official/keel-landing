@@ -49,7 +49,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build internal packages (turborepo)
-        run: npx turbo build --filter="!@normalfinance/web" --cache-dir=.turbo
+        run: npx turbo build --filter="!keel-web" --cache-dir=.turbo
 
       # ---------- Quality Gates ----------
       # Blocking since 2026-08-07: the repo-wide reformat landed, so an

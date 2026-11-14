@@ -103,18 +103,9 @@ export const WavyBackground = ({
       needsResize = false;
     };
 
-    const ro = new ResizeObserver(() => {
-      if (cfgRef.current.sizing === 'container') needsResize = true;
-    });
-    if (cfgRef.current.sizing === 'container') ro.observe(container);
-
-    const onWinResize = () => {
-      if (cfgRef.current.sizing === 'viewport') needsResize = true;
-    };
-    if (cfgRef.current.sizing === 'viewport') window.addEventListener('resize', onWinResize);
-
-    let nt = 0;
-    let rafId = 0;
+    // The waves are drawn once, as a still image, and redrawn only on resize. They never
+    // loop: nothing on the page animates forever.
+    const nt = 0;
 
     const drawFrame = () => {
       if (needsResize || width === 0 || height === 0) measure();
@@ -124,7 +115,6 @@ export const WavyBackground = ({
         colors: waveColors,
         waveOpacity: wAlpha,
         waveWidth: wWidth,
-        speed: spd,
         baseline: base,
         yOffset: yOff,
       } = cfgRef.current;
@@ -143,7 +133,6 @@ export const WavyBackground = ({
               ? height
               : height * 0.5;
 
-      nt += spd;
       const waveCount = 5;
       ctx.lineWidth = wWidth;
 
@@ -161,18 +150,29 @@ export const WavyBackground = ({
         ctx.stroke();
         ctx.closePath();
       }
-
-      rafId = requestAnimationFrame(drawFrame);
     };
 
-    rafId = requestAnimationFrame(drawFrame);
+    const ro = new ResizeObserver(() => {
+      if (cfgRef.current.sizing !== 'container') return;
+      needsResize = true;
+      drawFrame();
+    });
+    if (cfgRef.current.sizing === 'container') ro.observe(container);
+
+    const onWinResize = () => {
+      if (cfgRef.current.sizing !== 'viewport') return;
+      needsResize = true;
+      drawFrame();
+    };
+    if (cfgRef.current.sizing === 'viewport') window.addEventListener('resize', onWinResize);
+
+    drawFrame();
 
     return () => {
-      cancelAnimationFrame(rafId);
       ro.disconnect();
       window.removeEventListener('resize', onWinResize);
     };
-  }, [noise]);
+  }, [noise, colors, waveOpacity, waveWidth, backgroundFill, baseline, yOffset, sizing]);
 
   return (
     <div

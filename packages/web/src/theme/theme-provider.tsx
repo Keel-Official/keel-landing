@@ -3,12 +3,10 @@
 import type { Theme } from '@mui/material/styles';
 import type { ThemeProviderProps as MuiThemeProviderProps } from '@mui/material/styles/ThemeProvider';
 
-import { useTranslate } from '@/locales';
-
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider as ThemeVarsProvider } from '@mui/material/styles';
 
-import { useSettingsContext } from '@/components/template/settings';
+import { useSettingsContext } from '@/components/template/settings/context';
 
 import { createTheme } from './create-theme';
 import { Rtl } from './with-settings/right-to-left';
@@ -24,13 +22,10 @@ export type ThemeProviderProps = Omit<MuiThemeProviderProps, 'theme'> & {
 };
 
 export function ThemeProvider({ themeOverrides, children, ...other }: ThemeProviderProps) {
-  const { currentLang } = useTranslate();
-
   const settings = useSettingsContext();
 
   const theme = createTheme({
     settingsState: settings.state,
-    localeComponents: currentLang?.systemValue,
     themeOverrides,
   });
 
