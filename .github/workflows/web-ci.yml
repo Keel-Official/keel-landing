@@ -1,7 +1,7 @@
 name: Web CI
 
 # HISTORY (2026-08-06): this workflow had failed 40/40 runs back to at least
-# July 25 — every run died at the Prettier step, which SKIPPED every real gate
+# July 25: every run died at the Prettier step, which SKIPPED every real gate
 # behind it (ESLint, tsc, build). Nobody was typechecking in CI at all.
 # The July loss of the external-wallet gate (PR #466) happened with no net.
 # Changes made: PR trigger enabled, push narrowed (PRs already cover feature
@@ -63,7 +63,7 @@ jobs:
         working-directory: packages/web
         run: yarn lint
 
-      # (i18n steps removed 2026-08-06 — translations retired, English-only.
+      # (i18n steps removed 2026-08-06; translations retired, English-only.
       #  The t() runtime keys are the English strings themselves, so no
       #  extraction/sync is needed to render correctly.)
 
@@ -84,7 +84,7 @@ jobs:
 
       # NON-BLOCKING until CI secrets exist: several modules read env at
       # import time (e.g. server/rateLimiter constructs its Redis client from
-      # UPSTASH_* vars), and next build imports every route module — on a
+      # UPSTASH_* vars), and next build imports every route module, on a
       # secretless runner this can detonate regardless of code health. Vercel
       # builds every push with real env and is the authoritative build gate
       # today. To make this blocking: add the UPSTASH_*/DATABASE_URL/Supabase

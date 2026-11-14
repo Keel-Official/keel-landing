@@ -12,7 +12,7 @@ const { version } = JSON.parse(packageJson);
 const isStaticExport = 'false';
 
 const nextConfig = {
-  // Gate builds run alongside the dev server, and both default to `.next` —
+  // Gate builds run alongside the dev server, and both default to `.next`;
   // the dev server rewrites it mid-build, which fails prerendering with
   // random "Cannot find module" errors. Setting NEXT_BUILD_DIR points a
   // verification build at its own directory; unset, everything stays as before.

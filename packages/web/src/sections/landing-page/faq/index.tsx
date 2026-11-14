@@ -133,7 +133,7 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
           )}
         </Box>
 
-        {/* FAQ 2-column layout — each column is independent so expanding doesn't affect the other */}
+        {/* FAQ 2-column layout: each column is independent so expanding doesn't affect the other */}
         <Box
           sx={{
             display: 'grid',

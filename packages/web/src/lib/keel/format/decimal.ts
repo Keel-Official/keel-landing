@@ -10,8 +10,8 @@
  * length has to be chosen. This module truncates, never rounds, and reports that it
  * did. Rounding was rejected: carrying a digit is arithmetic, and on a cost figure it
  * would show a number larger than the one the engine computed, which is the wrong
- * direction to be wrong in for a risk display. Truncation is not safe either — it
- * shows a number smaller than the engine's — which is why `truncated` is part of the
+ * direction to be wrong in for a risk display. Truncation is not safe either: it
+ * shows a number smaller than the engine's, which is why `truncated` is part of the
  * return value rather than an implementation detail: a caller that drops digits is
  * required to mark that it did, and to keep `exact` reachable.
  *
@@ -76,7 +76,7 @@ export function formatDecimal(exact: string, options: FormatDecimalOptions = {})
 
     // A small positive value must not be shortened into something that reads as zero.
     // "0.0000001" at two fraction digits would display as "0.00", which is the same
-    // thing on screen as a computed zero — and those are different findings. When the
+    // thing on screen as a computed zero, and those are different findings. When the
     // kept digits are all zero but the value is not, keep slicing until two significant
     // digits are in view.
     if (/^0*$/.test(integerPart) && /^0*$/.test(shownFraction)) {

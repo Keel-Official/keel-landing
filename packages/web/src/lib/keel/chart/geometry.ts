@@ -40,7 +40,7 @@ export function isDrawable(value: string | null | undefined): boolean {
  *
  * One scale across the whole set, never one per row: a bar that filled its own row
  * would make every asset look equally deep. An unmeasured value returns null so the
- * caller can draw the absent state instead of a bar of length zero — a computed zero
+ * caller can draw the absent state instead of a bar of length zero; a computed zero
  * does get a zero-length bar, because that is a measurement.
  */
 export function barRatios(values: readonly (string | null | undefined)[]): (number | null)[] {

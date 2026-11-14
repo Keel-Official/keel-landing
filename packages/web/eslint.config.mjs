@@ -237,7 +237,7 @@ export const customConfig = {
     ...sortImportsRules(),
     // Translations are retired (2026-08-06, English-only): the reminder to
     // add dynamic keys to locale files no longer has an audience. The t()
-    // runtime stays — its keys ARE the English strings.
+    // runtime stays; its keys ARE the English strings.
     'custom-i18n/dynamic-translation-key': 'off',
   },
 };
@@ -259,7 +259,7 @@ export default [
   customConfig,
   // -------------------------------------------------------------------
   // Console hygiene (doc 114): browser consoles must stay silent for real
-  // users — balances, tx hashes and keyed-URL-bearing error objects were
+  // users: balances, tx hashes and keyed-URL-bearing error objects were
   // printing via F12. Client code uses the dev-gated `logger`; raw console is a lint
   // ERROR so it cannot come back. Server-side code is exempt: its output
   // goes to the Vercel function logs, not to any user's browser, and

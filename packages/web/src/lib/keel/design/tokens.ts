@@ -17,7 +17,7 @@
  * NOTE ON SVG. These work in a presentation attribute as well as in `style`: a
  * presentation attribute is parsed as a CSS declaration, so `stroke="var(--seq-600)"`
  * resolves against the element's cascade exactly as `style={{ stroke: ... }}` does.
- * Verified in the running page — the trend chart sets `stroke` and `fill` as attributes
+ * Verified in the running page: the trend chart sets `stroke` and `fill` as attributes
  * and both compute to the current theme's value. `style` is still preferred for new
  * code, because it is the form that is obviously correct at a glance.
  */
@@ -140,7 +140,7 @@ export const UNMEASURED_TOKEN = {
 /**
  * Confidence is orthogonal to band. `partial` is the value on all sixty-one monitored
  * assets today, so it is carried quietly beside each band rather than as an alarm on
- * every row — and the fact that it is universal is stated once, prominently, where it
+ * every row, and the fact that it is universal is stated once, prominently, where it
  * changes how the whole table should be read.
  */
 export const CONFIDENCE_TOKENS: Readonly<
