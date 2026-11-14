@@ -138,4 +138,52 @@ export const COPY = {
     copy: 'Copy',
     copied: 'Copied',
   },
+  /** FAQ. Appended to docs/landing-copy.md with its [Validate] and [Al writes] markers. */
+  faq: {
+    title: 'Frequently asked',
+    questions: [
+      {
+        title: 'What is Keel?',
+        answer:
+          "Keel measures how much real trading stands behind a token's price on Stellar, and how much of that token the market can back as loan collateral.",
+      },
+      {
+        title: 'Is Keel a price oracle?',
+        answer:
+          'No. An oracle tells you what the price is. Keel tells you how much can be traded at that price before it breaks.',
+      },
+      {
+        title: 'Does Keel tell me what to buy or sell?',
+        answer: 'No. Keel reports liquidity. The lender decides. It is not investment advice.',
+      },
+      {
+        title: 'What does each band mean?',
+        answer: 'TODO(copy)',
+      },
+      {
+        title: 'Why can a token with a normal-looking price be CRITICAL?',
+        answer:
+          'A price can come from one small trade. If almost nothing is on offer behind that price, it is cheap to move, and Keel marks the token CRITICAL. A token with no real trading at all is also CRITICAL.',
+      },
+      {
+        title: 'How often is Keel updated?',
+        answer:
+          'Every 15 minutes. Each reading shows the ledger it was taken at and how old it is.',
+      },
+      {
+        title: 'What does Keel cover?',
+        answer:
+          "Liquidity on Stellar only: the built-in order book and liquidity pools. Deep markets on other exchanges don't count here.",
+      },
+      {
+        title: 'Do I need an account or a wallet?',
+        answer: 'No. Keel is read-only. It never holds keys or moves funds.',
+      },
+      {
+        title: 'How can I check a number myself?',
+        answer:
+          'Every number carries the ledger it was read at and the methodology version that produced it, so anyone can reproduce it.',
+      },
+    ],
+  },
 } as const;

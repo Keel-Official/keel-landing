@@ -9,7 +9,7 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 
-import { Iconify } from '@/components/template/iconify';
+import { COPY } from '../copy';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                               */
@@ -18,7 +18,6 @@ import { Iconify } from '@/components/template/iconify';
 export type Question = { title: string; answer: string };
 
 export interface FaqAccordionProps extends React.ComponentPropsWithoutRef<'section'> {
-  eyebrow?: string;
   heading?: string;
   subhead?: string;
   questions?: Question[];
@@ -28,7 +27,23 @@ export interface FaqAccordionProps extends React.ComponentPropsWithoutRef<'secti
 /*  Data                                                                */
 /* ------------------------------------------------------------------ */
 
-const DEFAULT_QUESTIONS: Question[] = [];
+const DEFAULT_QUESTIONS: Question[] = COPY.faq.questions.map((q) => ({ ...q }));
+
+/** Plus and close marks, drawn inline so the page calls no icon service. */
+const ToggleIcon = ({ open }: { open: boolean }) => (
+  <svg
+    aria-hidden="true"
+    width={15}
+    height={15}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    strokeLinecap="round"
+  >
+    {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M12 5v14M5 12h14" />}
+  </svg>
+);
 
 /* ------------------------------------------------------------------ */
 /*  Styled overrides                                                    */
@@ -66,8 +81,7 @@ const AccordionDetails = styled(MuiAccordionDetails)({
 /* ------------------------------------------------------------------ */
 
 export const FaqAccordion: React.FC<FaqAccordionProps> = ({
-  eyebrow = '',
-  heading = '',
+  heading = COPY.faq.title,
   subhead,
   questions,
   ...sectionProps
@@ -86,21 +100,6 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
       <Box sx={{ maxWidth: 1200, mx: 'auto', px: 3 }}>
         {/* Header */}
         <Box sx={{ mb: '56px' }}>
-          <Box
-            component="p"
-            sx={{
-              m: 0,
-              mb: '14px',
-              fontSize: '11px',
-              fontWeight: 500,
-              textTransform: 'uppercase',
-              letterSpacing: '0.16em',
-              color: '#6b6b76',
-            }}
-          >
-            {eyebrow}
-          </Box>
-
           <Box
             component="h2"
             id="faq-heading"
@@ -172,10 +171,7 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
                               flexShrink: 0,
                             }}
                           >
-                            <Iconify
-                              icon={openIndex === i ? 'mingcute:close-line' : 'mingcute:add-line'}
-                              width={15}
-                            />
+                            <ToggleIcon open={openIndex === i} />
                           </Box>
                         }
                       >

@@ -223,3 +223,20 @@ Each term expands inline the first time it appears on the page. All entries are 
 4. Resolved: no key needed (checked 13 November 2026)
 5. [Al confirms] The audience list in section 5.
 6. Merge with the Figma landing design started on 10 November, if it exists.
+
+---
+
+## FAQ
+
+**Heading**
+Frequently asked
+
+1. **What is Keel?** Keel measures how much real trading stands behind a token's price on Stellar, and how much of that token the market can back as loan collateral. [Validate]
+2. **Is Keel a price oracle?** No. An oracle tells you what the price is. Keel tells you how much can be traded at that price before it breaks. [Validate]
+3. **Does Keel tell me what to buy or sell?** No. Keel reports liquidity. The lender decides. It is not investment advice.
+4. **What does each band mean?** `TODO(copy)` [Al writes]
+5. **Why can a token with a normal-looking price be CRITICAL?** A price can come from one small trade. If almost nothing is on offer behind that price, it is cheap to move, and Keel marks the token CRITICAL. A token with no real trading at all is also CRITICAL. [Validate]
+6. **How often is Keel updated?** Every 15 minutes. Each reading shows the ledger it was taken at and how old it is. [Validate]
+7. **What does Keel cover?** Liquidity on Stellar only: the built-in order book and liquidity pools. Deep markets on other exchanges don't count here. [Validate]
+8. **Do I need an account or a wallet?** No. Keel is read-only. It never holds keys or moves funds.
+9. **How can I check a number myself?** Every number carries the ledger it was read at and the methodology version that produced it, so anyone can reproduce it. [Validate]
