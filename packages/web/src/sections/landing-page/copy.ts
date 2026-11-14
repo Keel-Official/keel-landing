@@ -46,4 +46,36 @@ export const COPY = {
     secondaryCta: 'See how it works',
     historyLabel: 'Safe collateral size for {code}, {first} to {last}',
   },
+  /** Section 2. */
+  story: {
+    title: 'Price is not liquidity',
+    steps: [
+      {
+        title: 'A price is only the last trade.',
+        body: 'It tells you what someone just paid. It does not tell you what the next seller will get.',
+      },
+      {
+        title: 'What matters is what stands behind it.',
+        body: 'Behind every price on Stellar are open offers to buy and sell, in the order book and in liquidity pools. The more of them there are, the harder the price is to move.',
+      },
+      {
+        title: 'Some markets are a slope. Some are a cliff.',
+        body: '{deepAsset} can absorb {deepAmount} of selling before its price drops 5%. {thinAsset} can absorb {thinAmount}.',
+      },
+      {
+        title: 'Lending apps trust the price.',
+        body: 'A lending app values your collateral at the price it sees. If that price is cheap to push up, someone can borrow far more than their collateral is really worth.',
+      },
+      {
+        title: 'It happened on Stellar.',
+        // The deck's `{incident figure}` slot is dropped until the exploit ledger is confirmed.
+        body: 'On 22 February 2026, USTRY, a thinly traded token, was pushed to roughly 100 times its price and used as collateral on Blend.',
+      },
+      {
+        title: 'Keel measures the market behind the price.',
+        body: "Every 15 minutes, Keel reads Stellar's order books and liquidity pools and works out two limits. The selling limit: how much collateral the market can absorb in a forced sale. The manipulation limit: the point where pushing the price up costs less than the loan it would unlock. The lower of the two is the safe collateral size.",
+      },
+    ],
+    position: 'Step {n} of 6',
+  },
 } as const;
