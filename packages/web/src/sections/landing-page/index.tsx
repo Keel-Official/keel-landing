@@ -13,15 +13,16 @@ export type LandingPageProps = {
   hero: LandingReading;
   depth: { deep: DepthFigure; thin: DepthFigure };
   history: HeroHistory;
+  assetCount: number;
 };
 
-export default function LandingPage({ hero, depth, history }: LandingPageProps) {
+export default function LandingPage({ hero, depth, history, assetCount }: LandingPageProps) {
   return (
     <>
       <HeroHeader reading={hero} />
       <HowItWorks depth={depth} />
       <BentoSection history={history} hero={hero} />
-      <StatsGrid />
+      <StatsGrid assetCount={assetCount} />
       <FaqAccordion />
       <CtaImage />
     </>

@@ -115,4 +115,27 @@ export const COPY = {
       ['Researchers.', 'Replay any asset at a past ledger.'],
     ] as [string, string][],
   },
+  /** Section 6. The deck's "no sign-up" wording is left out. */
+  waysIn: {
+    title: 'Three ways in',
+    dashboard: {
+      name: 'Dashboard.',
+      body: 'Browse the {assetCount} Stellar assets Keel monitors.',
+      button: 'Open the dashboard',
+    },
+    api: {
+      name: 'API.',
+      body: 'Read-only JSON over HTTPS.',
+      button: 'Read the API docs',
+    },
+    agents: {
+      name: 'AI agents.',
+      body: "Ask Claude, Cursor or any MCP client, and get Keel's own numbers back.",
+      command: 'npx -y @keel-official/mcp',
+      button: 'Set up keel-mcp',
+    },
+    /** Not in the deck: the copy control beside the command (keel-frontend en.ts). */
+    copy: 'Copy',
+    copied: 'Copied',
+  },
 } as const;
