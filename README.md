@@ -8,6 +8,8 @@ The landing page for Keel, a read-only liquidity risk engine for Stellar. Built 
 2. `yarn install`
 3. `yarn dev:web`, then open http://localhost:8082
 
+The page reads Keel's API from `NEXT_PUBLIC_KEEL_API_BASE` (see `packages/web/.env.example`). When the API does not answer, saved real responses stand in.
+
 ## Copy
 
 `docs/landing-copy.md` is the source for every line on the page.

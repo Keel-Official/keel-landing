@@ -42,7 +42,7 @@ export default function RoadmapSection() {
             gap: '14px',
             alignItems: 'stretch',
           }}
-         />
+        />
       </Box>
     </Box>
   );

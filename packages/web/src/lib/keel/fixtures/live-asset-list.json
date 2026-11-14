@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "asset": {
+        "code": "1",
+        "type": "credit_alphanum4",
+        "issuer": "GBGRBCUB6L7LH4JQ6EPDP7REH2DDACMCUQI76M3P6DM52QWU2Z5LIEVW"
+      },
+      "quote": {
+        "code": "USDC",
+        "type": "credit_alphanum4",
+        "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+      },
+      "midPrice": "0.0316145810604297",
+      "priceSource": "pool",
+      "depth5PctBuySide": "0.9804393833537573624219251031",
+      "maxSafeCollateral": "1.012580194746889408072487501873894922680590999872",
+      "band": "HIGH",
+      "bandConfidence": "partial",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "THIN_DEPTH_5PCT",
+        "HOLDER_CONCENTRATION_HIGH"
+      ],
+      "ledgerSeq": 65459785
+    }
+  ],
+  "total": 85,
+  "limit": 1,
+  "offset": 0,
+  "methodologyVersion": "1.0.8-draft"
+}

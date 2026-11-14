@@ -18,7 +18,7 @@ export function BentoSection() {
             gridAutoRows: { xs: 'auto', md: 'minmax(290px, auto)' },
             gap: { xs: '10px', md: '14px' },
           }}
-         />
+        />
       </Container>
     </Box>
   );

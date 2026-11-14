@@ -1,0 +1,131 @@
+{
+  "asset": {
+    "code": "XLM",
+    "type": "native",
+    "issuer": null
+  },
+  "quote": {
+    "code": "USDC",
+    "type": "credit_alphanum4",
+    "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+  },
+  "ledgerSeq": 65459800,
+  "ledgerClosedAt": "2026-11-13T15:50:42Z",
+  "computedAt": "2026-11-13T15:50:49.061365Z",
+  "methodologyVersion": "1.0.8-draft",
+  "dataSource": "horizon",
+  "midPrice": "0.1486026",
+  "priceSource": "book",
+  "poolSpotPrice": "0.1482964290887367",
+  "priceDivergencePct": "0.20645872132234239021113381",
+  "spreadPct": "0.13243375284147114518857678",
+  "depth": [
+    {
+      "delta": 0.02,
+      "buySide": "184219.8238029062124358697197800244",
+      "sellSide": "48217.009220108025129124663051531412581246996559822997",
+      "fromSdex": "160032.40089286409854003817183",
+      "fromAmm": "24187.4229100421138958315479500244"
+    },
+    {
+      "delta": 0.05,
+      "buySide": "224853.6587715927103168178982484245",
+      "sellSide": "91490.482426244770540481531670744734183984998243233708",
+      "fromSdex": "168189.48222731982088338905935",
+      "fromAmm": "56664.1765442728894334288388984245"
+    },
+    {
+      "delta": 0.1,
+      "buySide": "283853.8829779477567551818466064906",
+      "sellSide": "186542.217821589486461115590367039525343964622247211641",
+      "fromSdex": "174076.16423532572806964741428",
+      "fromAmm": "109777.7187426220286855344323264906"
+    }
+  ],
+  "manipulationCostCombined": [
+    {
+      "delta": 0.5,
+      "targetPrice": "0.2229039",
+      "cost": "819712.9411219851763709986947557506",
+      "reachable": true
+    },
+    {
+      "delta": 1,
+      "targetPrice": "0.2972052",
+      "cost": "1237040.9929677908259680929145272887",
+      "reachable": true
+    },
+    {
+      "delta": 10,
+      "targetPrice": "1.6346286",
+      "cost": "5427335.2704584047918358494852140002",
+      "reachable": true
+    },
+    {
+      "delta": 100,
+      "targetPrice": "15.0088626",
+      "cost": "20258146.826900706816518770422668764",
+      "reachable": true
+    }
+  ],
+  "manipulationCostOrderbookOnly": [
+    {
+      "delta": 0.5,
+      "targetPrice": "0.2229039",
+      "cost": "322414.53260129451505386006039",
+      "reachable": false
+    },
+    {
+      "delta": 1,
+      "targetPrice": "0.2972052",
+      "cost": "322414.53260129451505386006039",
+      "reachable": false
+    },
+    {
+      "delta": 10,
+      "targetPrice": "1.6346286",
+      "cost": "322414.53260129451505386006039",
+      "reachable": false
+    },
+    {
+      "delta": 100,
+      "targetPrice": "15.0088626",
+      "cost": "322414.53260129451505386006039",
+      "reachable": false
+    }
+  ],
+  "maxReachablePrice": null,
+  "costToMaxReachablePrice": null,
+  "oracleResistance": null,
+  "maxSafeCollateral": "93271.1089107947432305577951835197626719823111236058205",
+  "maxSafeCollateralLiquidation": "93271.1089107947432305577951835197626719823111236058205",
+  "maxSafeCollateralManipulation": null,
+  "holderTop1Pct": null,
+  "holderTop10Pct": null,
+  "holderHhi": null,
+  "volumeToSupply": null,
+  "lastGenuineTrade": null,
+  "tradesExcludedPct": null,
+  "supportingNotes": {
+    "holders": "XLM is the native asset and has no trustlines, so there is no holder set to measure",
+    "tradesExcludedPct": "the newest trade reading is anchored more than 48h0m0s ago, so it was not used",
+    "volumeToSupply": "the newest trade reading is anchored more than 48h0m0s ago, so it was not used",
+    "lastGenuineTrade": "the newest trade reading is anchored more than 48h0m0s ago, so it was not used"
+  },
+  "flags": [],
+  "unevaluatedFlags": [
+    "MANIPULATION_RATIO_LOW",
+    "NO_GENUINE_TRADE_30D",
+    "HOLDER_CONCENTRATION_EXTREME",
+    "NO_GENUINE_TRADE_7D",
+    "HOLDER_CONCENTRATION_HIGH",
+    "WASH_TRADE_SUSPECTED"
+  ],
+  "band": "LOW",
+  "bandConfidence": "partial",
+  "warnings": [
+    "maxReachablePrice and costToMaxReachablePrice are null because an active pool is present: under a constant product curve the price tends to infinity as the base reserve tends to zero, so every target is reachable and a highest price has no meaning",
+    "manipulation to delta 0.5 is unreachable through the order book; the manipulation term was not applied",
+    "oracleResistance was not computed: genuine volume in the 900 second oracle window was not measured at this ledger"
+  ]
+}

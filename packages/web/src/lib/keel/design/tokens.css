@@ -1,0 +1,26 @@
+/* The band encodings in tokens.ts name these variables. Values are the risk ramp of
+   keel-frontend's marketing sheet (app/(marketing)/globals.css), copied unchanged, so a
+   band has the same colour here as on the Keel site. Light theme only, as there. */
+:root {
+  --low: #24664f;
+  --low-bg: #e6f3ea;
+  --medium: #8c5e12;
+  --medium-bg: #f7efdd;
+  --high: #a8451a;
+  --high-bg: #f8e9df;
+  --critical: #b3202c;
+  --critical-bg: #f7e1e2;
+
+  --band-low: var(--low);
+  --band-low-ink: var(--low);
+  --band-low-surface: var(--low-bg);
+  --band-medium: var(--medium);
+  --band-medium-ink: var(--medium);
+  --band-medium-surface: var(--medium-bg);
+  --band-high: var(--high);
+  --band-high-ink: var(--high);
+  --band-high-surface: var(--high-bg);
+  --band-critical: var(--critical);
+  --band-critical-ink: var(--critical);
+  --band-critical-surface: var(--critical-bg);
+}

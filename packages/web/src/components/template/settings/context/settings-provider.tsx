@@ -3,7 +3,7 @@
 import { isEqual } from 'es-toolkit';
 import { useMemo, useEffect, useCallback } from 'react';
 import { getCookie, getStorage } from 'minimal-shared/utils';
-import { useBoolean , useCookies, useLocalStorage } from 'minimal-shared/hooks';
+import { useBoolean, useCookies, useLocalStorage } from 'minimal-shared/hooks';
 
 import { SettingsContext } from './settings-context';
 import { SETTINGS_STORAGE_KEY } from '../settings-config';

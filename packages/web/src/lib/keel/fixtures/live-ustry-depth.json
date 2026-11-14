@@ -1,0 +1,137 @@
+{
+  "asset": {
+    "code": "USTRY",
+    "type": "credit_alphanum12",
+    "issuer": "GCRYUGD5NVARGXT56XEZI5CIFCQETYHAPQQTHO2O3IQZTHDH4LATMYWC"
+  },
+  "quote": {
+    "code": "USDC",
+    "type": "credit_alphanum4",
+    "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+  },
+  "ledgerSeq": 65459799,
+  "ledgerClosedAt": "2026-11-13T15:50:37Z",
+  "computedAt": "2026-11-13T15:50:42.432612Z",
+  "methodologyVersion": "1.0.8-draft",
+  "dataSource": "horizon",
+  "midPrice": "1.0802379999995",
+  "priceSource": "book",
+  "poolSpotPrice": "1.0820526252183757",
+  "priceDivergencePct": "0.16770212248313517247948973",
+  "spreadPct": "0.04999999999998611417113635",
+  "depth": [
+    {
+      "delta": 0.02,
+      "buySide": "266317.7356743623675148244714943112",
+      "sellSide": "260544.98165543240482718935715435970540316464990410387",
+      "fromSdex": "266317.58446475092873227754424",
+      "fromAmm": "0.1512096114387825469272543112"
+    },
+    {
+      "delta": 0.05,
+      "buySide": "266430.8641045078300598698433012563",
+      "sellSide": "260649.227779856260933052929750834895267266269342932606",
+      "fromSdex": "266430.46818625082425227754424",
+      "fromAmm": "0.3959182570058075922990612563"
+    },
+    {
+      "delta": 0.1,
+      "buySide": "266431.2643090085325481057823855269",
+      "sellSide": "260649.656640259853645882180857560929518014827876640068",
+      "fromSdex": "266430.46818625082425227754424",
+      "fromAmm": "0.7961227577082958282381455269"
+    }
+  ],
+  "manipulationCostCombined": [
+    {
+      "delta": 0.5,
+      "targetPrice": "1.62035699999925",
+      "cost": "266434.184233339418846672116555445",
+      "reachable": true
+    },
+    {
+      "delta": 1,
+      "targetPrice": "2.160475999999",
+      "cost": "266437.3287527539662714099775382685",
+      "reachable": true
+    },
+    {
+      "delta": 10,
+      "targetPrice": "11.8826179999945",
+      "cost": "266468.9021436390454466349590103405",
+      "reachable": true
+    },
+    {
+      "delta": 100,
+      "targetPrice": "109.1040379999495",
+      "cost": "266705.3657616490523268016126143203",
+      "reachable": true
+    }
+  ],
+  "manipulationCostOrderbookOnly": [
+    {
+      "delta": 0.5,
+      "targetPrice": "1.62035699999925",
+      "cost": "266430.46818625082425227754424",
+      "reachable": true
+    },
+    {
+      "delta": 1,
+      "targetPrice": "2.160475999999",
+      "cost": "266430.46818625082425227754424",
+      "reachable": true
+    },
+    {
+      "delta": 10,
+      "targetPrice": "11.8826179999945",
+      "cost": "266430.46818625082425227754424",
+      "reachable": true
+    },
+    {
+      "delta": 100,
+      "targetPrice": "109.1040379999495",
+      "cost": "266555.18332565638277227754424",
+      "reachable": true
+    }
+  ],
+  "maxReachablePrice": null,
+  "costToMaxReachablePrice": null,
+  "oracleResistance": {
+    "criticalDelta": 0.5,
+    "manipulationCost": "266430.46818625082425227754424",
+    "reachable": true,
+    "genuineVolume": "80.4636616",
+    "windowSeconds": 900,
+    "ratio": "3311.189956911565956529593779262",
+    "totalAttackCost": "266510.93184785082425227754424"
+  },
+  "maxSafeCollateral": "66607.61704656270606306938606",
+  "maxSafeCollateralLiquidation": "130324.828320129926822941090428780464759007413938320034",
+  "maxSafeCollateralManipulation": "66607.61704656270606306938606",
+  "holderTop1Pct": null,
+  "holderTop10Pct": null,
+  "holderHhi": null,
+  "volumeToSupply": null,
+  "lastGenuineTrade": null,
+  "tradesExcludedPct": null,
+  "supportingNotes": {
+    "holders": "the newest holder reading is older than 48h0m0s, so it was not used",
+    "tradesExcludedPct": "the newest trade reading is anchored more than 48h0m0s ago, so it was not used",
+    "volumeToSupply": "the newest trade reading is anchored more than 48h0m0s ago, so it was not used",
+    "lastGenuineTrade": "the newest trade reading is anchored more than 48h0m0s ago, so it was not used"
+  },
+  "flags": [],
+  "unevaluatedFlags": [
+    "MANIPULATION_RATIO_LOW",
+    "NO_GENUINE_TRADE_30D",
+    "HOLDER_CONCENTRATION_EXTREME",
+    "NO_GENUINE_TRADE_7D",
+    "HOLDER_CONCENTRATION_HIGH",
+    "WASH_TRADE_SUSPECTED"
+  ],
+  "band": "LOW",
+  "bandConfidence": "partial",
+  "warnings": [
+    "maxReachablePrice and costToMaxReachablePrice are null because an active pool is present: under a constant product curve the price tends to infinity as the base reserve tends to zero, so every target is reachable and a highest price has no meaning"
+  ]
+}

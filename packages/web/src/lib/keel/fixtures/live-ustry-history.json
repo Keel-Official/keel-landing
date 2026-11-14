@@ -1,0 +1,368 @@
+{
+  "asset": {
+    "code": "USTRY",
+    "type": "credit_alphanum12",
+    "issuer": "GCRYUGD5NVARGXT56XEZI5CIFCQETYHAPQQTHO2O3IQZTHDH4LATMYWC"
+  },
+  "quote": {
+    "code": "USDC",
+    "type": "credit_alphanum4",
+    "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+  },
+  "from": 65024477,
+  "to": 65461959,
+  "resolution": "day",
+  "methodologyVersion": "1.0.8-draft",
+  "dataSource": "horizon",
+  "gaps": [
+    {
+      "from": 65380105,
+      "to": 65458014,
+      "reason": "no result was recorded between these ledgers"
+    }
+  ],
+  "points": [
+    {
+      "ledgerSeq": 65033657,
+      "ledgerClosedAt": "2026-10-19T23:54:28Z",
+      "midPrice": "1.07757600000000005",
+      "depth2PctBuySide": "270289.7965105315886836574555425189",
+      "depth5PctBuySide": "270402.6493661964492394752933701617",
+      "depth10PctBuySide": "270403.0512666725000691631991066575",
+      "manipulationCost50Pct": "270402.22025317176317678233355",
+      "maxSafeCollateral": "67600.5550632929407941955833875",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65050937,
+      "ledgerClosedAt": "2026-10-20T23:54:28Z",
+      "midPrice": "1.0776779999994999",
+      "depth2PctBuySide": "267648.603267023034325154061534697",
+      "depth5PctBuySide": "267761.4652258585041767939810340812",
+      "depth10PctBuySide": "267761.8671454209646943159639473961",
+      "manipulationCost50Pct": "267761.03710317660152502816892",
+      "maxSafeCollateral": "66940.25927579415038125704223",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65068218,
+      "ledgerClosedAt": "2026-10-21T23:54:33Z",
+      "midPrice": "1.07777999999949985",
+      "depth2PctBuySide": "274212.622848981681088297264823148",
+      "depth5PctBuySide": "274325.4971504755149953452258163561",
+      "depth10PctBuySide": "274325.899089104529805120999083484",
+      "manipulationCost50Pct": "274325.06948899016470298073125",
+      "maxSafeCollateral": "68581.2673722475411757451828125",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65085497,
+      "ledgerClosedAt": "2026-10-22T23:54:28Z",
+      "midPrice": "1.07788199999950015",
+      "depth2PctBuySide": "269564.0479509446106356453769831078",
+      "depth5PctBuySide": "269676.9312511312764570297793727552",
+      "depth10PctBuySide": "269677.3332088830444680288216332331",
+      "manipulationCost50Pct": "269676.50487052055027068356082",
+      "maxSafeCollateral": "67419.126217630137567670890205",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65102777,
+      "ledgerClosedAt": "2026-10-23T23:54:28Z",
+      "midPrice": "1.07798795127865665",
+      "depth2PctBuySide": "271150.6125191889418193286197775309",
+      "depth5PctBuySide": "271263.5085804548637898306323458483",
+      "depth10PctBuySide": "271263.9105579615268005745771982998",
+      "manipulationCost50Pct": "271263.08136037596968843349689",
+      "maxSafeCollateral": "67815.7703400939924221083742225",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65120057,
+      "ledgerClosedAt": "2026-10-24T23:54:28Z",
+      "midPrice": "1.0780925082499999",
+      "depth2PctBuySide": "266854.2532307053399867233681732527",
+      "depth5PctBuySide": "266967.1603809389883965791262323489",
+      "depth10PctBuySide": "266967.5623780180615815017818728817",
+      "manipulationCost50Pct": "266966.7341203199909266020184",
+      "maxSafeCollateral": "66741.6835300799977316505046",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65137337,
+      "ledgerClosedAt": "2026-10-25T23:54:28Z",
+      "midPrice": "1.0782004641817035",
+      "depth2PctBuySide": "278755.7334437381076810139409351436",
+      "depth5PctBuySide": "278868.6517877784063371727418839433",
+      "depth10PctBuySide": "278869.0538049841766795306885948769",
+      "manipulationCost50Pct": "278868.22467189181118310551606",
+      "maxSafeCollateral": "69717.056167972952795776379015",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65154617,
+      "ledgerClosedAt": "2026-10-26T23:54:28Z",
+      "midPrice": "1.07830717282329305",
+      "depth2PctBuySide": "261950.7838649907069826046061583653",
+      "depth5PctBuySide": "262063.7132981970336239974281226836",
+      "depth10PctBuySide": "262064.115335299437538087665110975",
+      "manipulationCost50Pct": "262063.28530472291655173057668",
+      "maxSafeCollateral": "65515.82132618072913793264417",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65171897,
+      "ledgerClosedAt": "2026-10-27T23:54:28Z",
+      "midPrice": "1.07841296660992505",
+      "depth2PctBuySide": "269403.3017006831181218718858826696",
+      "depth5PctBuySide": "269516.2422229484749368650606984481",
+      "depth10PctBuySide": "269516.6442797725246461418568932967",
+      "manipulationCost50Pct": "269515.813391419087807803978",
+      "maxSafeCollateral": "67378.9533478547719519509945",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65189177,
+      "ledgerClosedAt": "2026-10-28T23:54:28Z",
+      "midPrice": "1.078519119002828",
+      "depth2PctBuySide": "266607.0948715463442258468166265159",
+      "depth5PctBuySide": "266720.046482988762942273097283554",
+      "depth10PctBuySide": "266720.4485597275769010852870996417",
+      "manipulationCost50Pct": "266719.62028644142557373477636",
+      "maxSafeCollateral": "66679.90507161035639343369409",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65206457,
+      "ledgerClosedAt": "2026-10-29T23:54:29Z",
+      "midPrice": "1.07862799999949985",
+      "depth2PctBuySide": "271114.1155886532215018445433644212",
+      "depth5PctBuySide": "271114.3614545692133624113035335294",
+      "depth10PctBuySide": "271114.7635517077156957783551143908",
+      "manipulationCost50Pct": "271233.9348627057841645032936",
+      "maxSafeCollateral": "67808.4837156764460411258234",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65223737,
+      "ledgerClosedAt": "2026-10-30T23:54:29Z",
+      "midPrice": "1.0787344890846054",
+      "depth2PctBuySide": "267787.2268782727044782653761014921",
+      "depth5PctBuySide": "267900.1994143250236159664337748497",
+      "depth10PctBuySide": "267900.6015313118423356358614558949",
+      "manipulationCost50Pct": "267899.77439152367205536903283",
+      "maxSafeCollateral": "66974.9435978809180138422582075",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65241017,
+      "ledgerClosedAt": "2026-10-31T23:54:29Z",
+      "midPrice": "1.0788310846247502",
+      "depth2PctBuySide": "265441.8273830444685281377512415498",
+      "depth5PctBuySide": "265554.8129926051982445568941468293",
+      "depth10PctBuySide": "265555.2151275954452546013898110762",
+      "manipulationCost50Pct": "265554.38720476282959395139104",
+      "maxSafeCollateral": "66388.59680119070739848784776",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65258297,
+      "ledgerClosedAt": "2026-11-01T23:54:29Z",
+      "midPrice": "1.0789519999990001",
+      "depth2PctBuySide": "262041.1978956294677056001389855175",
+      "depth5PctBuySide": "262154.1935668521517412994227516499",
+      "depth10PctBuySide": "262154.5935286172302308903302134261",
+      "manipulationCost50Pct": "262153.7691514116130585385705",
+      "maxSafeCollateral": "65538.442287852903264634642625",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65275526,
+      "ledgerClosedAt": "2026-11-02T23:54:29Z",
+      "midPrice": "1.07906099999899995",
+      "depth2PctBuySide": "266100.0691338326081102395042106159",
+      "depth5PctBuySide": "266213.0762079080963077091886608631",
+      "depth10PctBuySide": "266213.4761898755245743425747413027",
+      "manipulationCost50Pct": "266212.65093398516350785059796",
+      "maxSafeCollateral": "66553.16273349629087696264949",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65292806,
+      "ledgerClosedAt": "2026-11-03T23:54:29Z",
+      "midPrice": "1.0791699999994999",
+      "depth2PctBuySide": "274455.8372356935107046018847430327",
+      "depth5PctBuySide": "274568.8557143943499103401990792155",
+      "depth10PctBuySide": "274569.2557194627524466868929649571",
+      "manipulationCost50Pct": "274568.46297536398574890338196",
+      "maxSafeCollateral": "68642.11574384099643722584549",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65310086,
+      "ledgerClosedAt": "2026-11-04T23:54:29Z",
+      "midPrice": "1.07927899999949985",
+      "depth2PctBuySide": "272495.5296527118303468266118501215",
+      "depth5PctBuySide": "272608.559534654574054150399127525",
+      "depth10PctBuySide": "272608.9595605615028356237420490124",
+      "manipulationCost50Pct": "272608.14830990741327724816912",
+      "maxSafeCollateral": "68152.03707747685331931204228",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65327365,
+      "ledgerClosedAt": "2026-11-05T23:54:26Z",
+      "midPrice": "1.0793827100093665",
+      "depth2PctBuySide": "269347.1931444442316592120485192646",
+      "depth5PctBuySide": "269460.2344286393812260062006302087",
+      "depth10PctBuySide": "269460.6344737666633334892334486402",
+      "manipulationCost50Pct": "269459.82236126133254836097831",
+      "maxSafeCollateral": "67364.9555903153331370902445775",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65344645,
+      "ledgerClosedAt": "2026-11-06T23:54:27Z",
+      "midPrice": "1.07948706036095425",
+      "depth2PctBuySide": "258493.8982064902718036450839381112",
+      "depth5PctBuySide": "258494.142829509250254930760673445",
+      "depth10PctBuySide": "258494.5428939734368791085612255792",
+      "manipulationCost50Pct": "258493.72994042519868596949504",
+      "maxSafeCollateral": "64623.43248510629967149237376",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65361925,
+      "ledgerClosedAt": "2026-11-07T23:54:27Z",
+      "midPrice": "1.07954642899975",
+      "depth2PctBuySide": "260002.7658358975643148981377280262",
+      "depth5PctBuySide": "260115.8301286436583115002978636896",
+      "depth10PctBuySide": "260116.2302041097600217319324458758",
+      "manipulationCost50Pct": "260115.41678207227912953916453",
+      "maxSafeCollateral": "65028.8541955180697823847911325",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65379205,
+      "ledgerClosedAt": "2026-11-08T23:54:27Z",
+      "midPrice": "1.0797180354844801",
+      "depth2PctBuySide": "274215.9962654343145825594424718473",
+      "depth5PctBuySide": "274329.0720726230103642674512261094",
+      "depth10PctBuySide": "274329.4721798861771832279389739664",
+      "manipulationCost50Pct": "274328.65737486125572119225922",
+      "maxSafeCollateral": "68582.164343715313930298064805",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65380105,
+      "ledgerClosedAt": "2026-11-09T01:09:27Z",
+      "midPrice": "1.0797289999994999",
+      "depth2PctBuySide": "275077.5320391295828173423649851641",
+      "depth5PctBuySide": "275190.6081610605315109697696364248",
+      "depth10PctBuySide": "275191.0082703552337933454372263845",
+      "manipulationCost50Pct": "275190.19337697033252285416446",
+      "maxSafeCollateral": "68797.548344242583130713541115",
+      "band": "HIGH",
+      "flags": [
+        "HOLDER_CONCENTRATION_EXTREME",
+        "HOLDER_CONCENTRATION_HIGH"
+      ]
+    },
+    {
+      "ledgerSeq": 65461959,
+      "ledgerClosedAt": "2026-11-13T18:50:37Z",
+      "midPrice": "1.0802489999995002",
+      "depth2PctBuySide": "266196.7522109163697991173257373966",
+      "depth5PctBuySide": "266309.8806423077560427941867721403",
+      "depth10PctBuySide": "266310.2808488460827864740991820734",
+      "manipulationCost50Pct": "266309.48463746356763367906676",
+      "maxSafeCollateral": "66577.37115936589190841976669",
+      "band": "LOW",
+      "flags": []
+    }
+  ]
+}
