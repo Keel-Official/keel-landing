@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 
 import { COPY } from './copy';
+import { StepVisual, STEP_VISUALS } from './step-visuals';
 
 // ----------------------------------------------------------------------
 
@@ -91,12 +92,14 @@ export function HowItWorks({ depth }: HowItWorksProps) {
             listStyle: 'none',
             display: 'grid',
             gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
+            // Every row shares one height, so all six cards match at every width.
+            gridAutoRows: '1fr',
             gap: '14px',
             alignItems: 'stretch',
           }}
         >
           {copy.steps.map((step, index) => (
-            <Box component="li" key={step.title} sx={{ m: 0 }}>
+            <Box component="li" key={step.title} sx={{ m: 0, height: '100%' }}>
               <StepCard aria-label={fill(copy.position, { n: index + 1 })}>
                 <Box
                   component="span"
@@ -140,6 +143,10 @@ export function HowItWorks({ depth }: HowItWorksProps) {
                 >
                   {bodyOf(index, step.body)}
                 </Box>
+
+                {STEP_VISUALS[index + 1] ? (
+                  <StepVisual>{STEP_VISUALS[index + 1]}</StepVisual>
+                ) : null}
               </StepCard>
             </Box>
           ))}

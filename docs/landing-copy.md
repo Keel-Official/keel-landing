@@ -73,7 +73,7 @@ Each slide is named "Step {n} of 6" for screen readers.
 **A price is only the last trade.**
 It tells you what someone just paid. It does not tell you what the next seller will get.
 
-Visual: one price number, alone on the screen.
+Visual: a row of past trades as dots; the last one is solid and labelled "Last trade"; an empty dashed circle after it is labelled "Next trade". No numbers.
 
 ### Step 2
 
