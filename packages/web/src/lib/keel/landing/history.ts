@@ -23,6 +23,9 @@ export interface HeroHistory {
   /** The first and last readings' own timestamps, as served. */
   readonly firstAt: string;
   readonly lastAt: string;
+  /** The last reading's ledger and the series' methodology version, as served. */
+  readonly lastLedgerSeq: number | null;
+  readonly methodologyVersion: string;
   readonly live: boolean;
 }
 
@@ -65,6 +68,8 @@ export function historyLine(response: HistoryResponse, live: boolean): HeroHisto
     drawn: points.filter((point) => point !== null).length,
     firstAt: readings[0]?.ledgerClosedAt ?? '',
     lastAt: readings.at(-1)?.ledgerClosedAt ?? '',
+    lastLedgerSeq: readings.at(-1)?.ledgerSeq ?? null,
+    methodologyVersion: response.methodologyVersion,
     live,
   };
 }

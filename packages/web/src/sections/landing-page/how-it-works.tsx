@@ -1,3 +1,5 @@
+'use client';
+
 import type { DepthFigure } from '@/lib/keel/landing/story';
 
 import { fill } from '@/lib/keel/format/fill';

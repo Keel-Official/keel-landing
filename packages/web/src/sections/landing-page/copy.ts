@@ -78,4 +78,41 @@ export const COPY = {
     ],
     position: 'Step {n} of 6',
   },
+  /** Section 3. */
+  glance: {
+    title: 'One word first. The evidence when you want it.',
+    body: 'Every asset gets a band and one plain sentence. Open it to see the numbers behind the sentence.',
+    /** [Al writes] one plain sentence per band, from docs/methodology. */
+    bandLine: 'TODO(copy): one plain sentence for {band}',
+    notes: [
+      "Partial confidence means some checks couldn't run. The real band can only be the same or worse.",
+      'No price at all is a finding, not an error. Keel marks it CRITICAL.',
+    ],
+    ledger: 'Ledger {ledger}',
+    methodology: 'Methodology {methodology}',
+  },
+  /** Section 4. */
+  checked: {
+    title: 'Built to be checked',
+    reproducible:
+      'Every number carries the ledger it was read at and the methodology version that produced it, so anyone can reproduce it.',
+    unknownTitle: 'Unknown means unknown.',
+    unknownBody: "If Keel can't measure something, it says so instead of showing zero.",
+    listed: "Checks that couldn't run are listed, not hidden.",
+    rest: [
+      "Keel's thresholds are chosen, not yet calibrated against past incidents, and the methodology says so.",
+      "Keel measures liquidity on Stellar only. Deep markets on other exchanges don't count here.",
+      'Read-only, always. Keel never holds keys or moves funds.',
+    ],
+  },
+  /** Section 5. [Al confirms] the list. */
+  audiences: {
+    title: 'For anyone who lends against a price',
+    items: [
+      ['Pool creators.', 'Check a token before you accept it as collateral.'],
+      ['Depositors.', 'Look up the assets a lending pool accepts before you put money in.'],
+      ['Lending protocols.', 'Set your collateral caps beside what the market can absorb.'],
+      ['Researchers.', 'Replay any asset at a past ledger.'],
+    ] as [string, string][],
+  },
 } as const;

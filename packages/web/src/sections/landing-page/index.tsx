@@ -1,4 +1,5 @@
 import type { DepthFigure } from '@/lib/keel/landing/story';
+import type { HeroHistory } from '@/lib/keel/landing/history';
 import type { LandingReading } from '@/lib/keel/landing/readings';
 
 import { CtaImage } from './cta';
@@ -11,14 +12,15 @@ import { StatsGrid } from './stats-grid/stats-grid';
 export type LandingPageProps = {
   hero: LandingReading;
   depth: { deep: DepthFigure; thin: DepthFigure };
+  history: HeroHistory;
 };
 
-export default function LandingPage({ hero, depth }: LandingPageProps) {
+export default function LandingPage({ hero, depth, history }: LandingPageProps) {
   return (
     <>
       <HeroHeader reading={hero} />
       <HowItWorks depth={depth} />
-      <BentoSection />
+      <BentoSection history={history} hero={hero} />
       <StatsGrid />
       <FaqAccordion />
       <CtaImage />
