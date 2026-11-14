@@ -2,7 +2,7 @@
  * THE ONLY MODULE IN THIS CODEBASE THAT MAY TURN A DECIMAL STRING INTO A NUMBER.
  *
  * Pixel positions need numbers, so the conversion has to happen somewhere. It happens
- * here and nowhere else, and `scripts/check-no-float-math.mts` fails the build if it
+ * here and nowhere else, and keel-frontend `scripts/check-no-float-math.mts` fails the build if it
  * appears anywhere outside this file.
  *
  * Everything this module returns is a COORDINATE: a ratio between 0 and 1 that a

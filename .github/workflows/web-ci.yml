@@ -8,7 +8,7 @@ name: Web CI
 # branches), Prettier made non-blocking until the scheduled repo-wide reformat
 # lands, the unit-test step added, build made non-blocking until repo secrets
 # exist (Vercel builds every push with real env and is the authoritative
-# build signal today). Details: docs/audit/50-ci-and-withauth-plan.md.
+# build signal today).
 
 # A commit is checked ONCE. `pull_request` covers everything on its way in;
 # `push` is master-only so that post-merge state is still verified. Listing
@@ -48,9 +48,6 @@ jobs:
       - name: Install dependencies (Yarn)
         run: yarn install --frozen-lockfile
 
-      - name: Build internal packages (turborepo)
-        run: npx turbo build --filter="!keel-web" --cache-dir=.turbo
-
       # ---------- Quality Gates ----------
       # Blocking since 2026-08-07: the repo-wide reformat landed, so an
       # unformatted file is now a real defect, not legacy noise. `yarn fm:fix`
@@ -76,7 +73,7 @@ jobs:
         run: npx tsc --noEmit --project tsconfig.json
 
       # The unit suite: money-math and regression tests, each anchored to a
-      # shipped bug (see docs/audit/47-testing-plan.md). Runs in seconds; a
+      # shipped bug. Runs in seconds; a
       # red here means a promise users already relied on has been broken.
       - name: Jest – unit tests
         working-directory: packages/web

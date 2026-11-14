@@ -11,42 +11,6 @@
 #           - "*"
 
 #   - package-ecosystem: "npm"
-#     directory: "/packages/contracts"
-#     schedule:
-#       interval: "daily"
-#     groups:
-#       all-deps:
-#         patterns:
-#           - "*"
-
-#   - package-ecosystem: "npm"
-#     directory: "/packages/state"
-#     schedule:
-#       interval: "daily"
-#     groups:
-#       all-deps:
-#         patterns:
-#           - "*"
-
-#   - package-ecosystem: "npm"
-#     directory: "/packages/types"
-#     schedule:
-#       interval: "daily"
-#     groups:
-#       all-deps:
-#         patterns:
-#           - "*"
-
-#   - package-ecosystem: "npm"
-#     directory: "/packages/utils"
-#     schedule:
-#       interval: "daily"
-#     groups:
-#       all-deps:
-#         patterns:
-#           - "*"
-
-#   - package-ecosystem: "npm"
 #     directory: "/packages/web"
 #     schedule:
 #       interval: "daily"

@@ -11,7 +11,7 @@
  *
  * The literal values, the validator output behind each of them, and the alternatives
  * that were rejected live in `docs/decisions/002-dashboard-theme-tokens.md`.
- * `scripts/check-token-contrast.mjs` is the validator; it holds both palettes and
+ * keel-frontend `scripts/check-token-contrast.mjs` is the validator; it holds both palettes and
  * fails on a regression.
  *
  * NOTE ON SVG. These work in a presentation attribute as well as in `style`: a
