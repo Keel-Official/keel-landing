@@ -187,6 +187,8 @@ For anyone who lends against a price
 - **API.** Read-only JSON over HTTPS. Button: Read the API docs
 - **AI agents.** Ask Claude, Cursor or any MCP client, and get Keel's own numbers back. `npx -y @keel-official/mcp`. Button: Set up keel-mcp
 
+Visual (Al, 2026-11-16): one dark card. The wide side (80%) holds the title and the three ways over a perspective grid floor with light running along its lines. The narrow side (20%) is a grainy gradient panel where the three buttons take turns, 3 seconds each: each comes forward from the front, holds, then sinks back as the next comes, round and round, and the matching way on the wide side lights up. Hovering the panel, or focusing one of its buttons, holds it. It stops off screen and in a hidden tab; with reduced motion the three buttons show as a still list and the light does not run. On a phone the panel sits above the text.
+
 [Pending] Whether the API needs a key. Only say "no sign-up" if it doesn't.
 
 ---

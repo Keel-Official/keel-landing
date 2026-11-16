@@ -4,9 +4,10 @@ import * as React from 'react';
 import { fill } from '@/lib/keel/format/fill';
 
 import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
 
 import { COPY, LINKS } from '../copy';
+import { GridFloor } from './grid-floor';
+import { WAY_MS, WaysInPanel } from './ways-in-panel';
 
 // ----------------------------------------------------------------------
 
@@ -14,39 +15,6 @@ const MONO = {
   fontFamily: '"Geist Mono", ui-monospace, monospace',
   fontFeatureSettings: '"ss01","ss02","zero"',
   fontVariantNumeric: 'tabular-nums',
-} as const;
-
-const TILE_SX = {
-  background: 'rgba(255,255,255,0.04)',
-  border: '1px solid rgba(255,255,255,0.07)',
-  borderRadius: '20px',
-  p: '28px',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '24px',
-  backdropFilter: 'blur(8px)',
-  transition: 'border-color 200ms, background 200ms',
-  '&:hover': {
-    background: 'rgba(255,255,255,0.06)',
-    borderColor: 'rgba(255,255,255,0.12)',
-  },
-} as const;
-
-const BUTTON_SX = {
-  display: 'inline-flex',
-  alignItems: 'center',
-  alignSelf: 'flex-start',
-  height: 40,
-  px: '18px',
-  mt: 'auto',
-  borderRadius: '999px',
-  fontSize: '14px',
-  fontWeight: 600,
-  textDecoration: 'none',
-  bgcolor: '#fff',
-  color: '#0A0A0F',
-  transition: 'background 150ms, transform 150ms',
-  '&:hover': { bgcolor: '#f4f4f7', transform: 'translateY(-1px)' },
 } as const;
 
 /** The MCP command, with a control that copies it. */
@@ -108,21 +76,54 @@ function CopyCommand({ command }: { command: string }) {
   );
 }
 
-const SectionRoot = styled('section')({
-  position: 'relative',
-  overflow: 'hidden',
-  backgroundColor: '#0A0A0F',
-  color: '#fff',
-  isolation: 'isolate',
-});
+// ----------------------------------------------------------------------
 
-const Inner = styled('div')(({ theme }) => ({
-  position: 'relative',
-  zIndex: 1,
-  maxWidth: 1200,
-  margin: '0 auto',
-  padding: `${theme.spacing(13)} ${theme.spacing(3)}`,
-}));
+/** The card's dark side and its text. */
+const CARD_BG = '#151922';
+const TEXT_MUTED = 'rgba(255,255,255,0.55)';
+
+/**
+ * Which way in is at the front of the panel. It moves on every `WAY_MS` and round again
+ * after the last, unless held: the reader is on the panel, the card is off screen, the
+ * tab is hidden, or motion is reduced.
+ */
+function useWayCycle(count: number) {
+  const [active, setActive] = React.useState(0);
+  const [held, setHeld] = React.useState(false);
+  const [offscreen, setOffscreen] = React.useState(true);
+  const [hidden, setHidden] = React.useState(false);
+  const [reduced, setReduced] = React.useState(false);
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const query = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const apply = () => setReduced(query.matches);
+    apply();
+    query.addEventListener('change', apply);
+    const onVisibility = () => setHidden(document.hidden);
+    document.addEventListener('visibilitychange', onVisibility);
+    const el = ref.current;
+    const observer = new IntersectionObserver(([entry]) => setOffscreen(!entry.isIntersecting), {
+      threshold: 0.3,
+    });
+    if (el) observer.observe(el);
+    return () => {
+      query.removeEventListener('change', apply);
+      document.removeEventListener('visibilitychange', onVisibility);
+      observer.disconnect();
+    };
+  }, []);
+
+  const stopped = held || offscreen || hidden || reduced;
+
+  React.useEffect(() => {
+    if (stopped) return undefined;
+    const timer = window.setTimeout(() => setActive((a) => (a + 1) % count), WAY_MS);
+    return () => window.clearTimeout(timer);
+  }, [active, stopped, count]);
+
+  return { ref, active, setActive, setHeld, reduced, still: offscreen || hidden || reduced };
+}
 
 // ----------------------------------------------------------------------
 
@@ -131,10 +132,15 @@ export type StatsGridProps = React.ComponentPropsWithoutRef<'section'> & {
   assetCount: number;
 };
 
-/** `docs/landing-copy.md` section 6: three ways in. */
+/**
+ * `docs/landing-copy.md` section 6: three ways in, as one dark card. The wide side
+ * holds the three ways over a grid floor with running light; the narrow side is a
+ * gradient panel where each way's button takes the front for three seconds, coming
+ * forward and sinking back. Hovering the panel holds it.
+ */
 export const StatsGrid: React.FC<StatsGridProps> = ({ assetCount, ...props }) => {
   const copy = COPY.waysIn;
-  const tiles = [
+  const ways = [
     {
       name: copy.dashboard.name,
       body: fill(copy.dashboard.body, { assetCount }),
@@ -158,90 +164,104 @@ export const StatsGrid: React.FC<StatsGridProps> = ({ assetCount, ...props }) =>
       external: true,
     },
   ];
+  const cycle = useWayCycle(ways.length);
 
   return (
-    <SectionRoot aria-labelledby="ways-heading" {...props}>
-      {/* Aurora glow */}
-      <Box
-        sx={{
-          position: 'absolute',
-          inset: '-10%',
-          zIndex: 0,
-          pointerEvents: 'none',
-          background: [
-            'radial-gradient(closest-side at 15% 30%, rgba(91,207,255,0.22), transparent 60%)',
-            'radial-gradient(closest-side at 85% 70%, rgba(255,176,96,0.16), transparent 60%)',
-            'radial-gradient(closest-side at 60% 15%, rgba(255,123,197,0.16), transparent 60%)',
-            'radial-gradient(closest-side at 35% 85%, rgba(177,123,255,0.22), transparent 60%)',
-          ].join(','),
-          filter: 'blur(40px)',
-          opacity: 0.85,
-        }}
-      />
-
-      {/* Dot grid */}
-      <Box
-        sx={{
-          position: 'absolute',
-          inset: 0,
-          zIndex: 0,
-          pointerEvents: 'none',
-          backgroundImage: 'radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)',
-          backgroundSize: '20px 20px',
-          WebkitMaskImage: 'radial-gradient(ellipse at 50% 50%, black 30%, transparent 75%)',
-          maskImage: 'radial-gradient(ellipse at 50% 50%, black 30%, transparent 75%)',
-        }}
-      />
-
-      <Inner>
+    <Box
+      component="section"
+      aria-labelledby="ways-heading"
+      {...props}
+      sx={{ bgcolor: '#FAFAFB', py: { xs: '64px', md: '104px' } }}
+    >
+      <Box sx={{ maxWidth: 1200, mx: 'auto', px: 3 }}>
         <Box
-          component="h2"
-          id="ways-heading"
+          ref={cycle.ref}
           sx={{
-            m: 0,
-            fontSize: 'clamp(34px, 4.4vw, 56px)',
-            fontWeight: 500,
-            letterSpacing: '-0.03em',
-            lineHeight: 1.08,
-            color: '#fff',
-          }}
-        >
-          {copy.title}
-        </Box>
-
-        <Box
-          sx={{
-            mt: '56px',
             display: 'grid',
-            gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
-            gap: '14px',
+            gridTemplateColumns: { xs: '1fr', md: '1fr 4fr' },
+            borderRadius: { xs: '20px', md: '24px' },
+            overflow: 'hidden',
+            bgcolor: CARD_BG,
+            color: '#fff',
+            boxShadow: '0 30px 60px -30px rgba(10,15,30,0.45)',
           }}
         >
-          {tiles.map((tile) => (
-            <Box key={tile.name} sx={TILE_SX}>
+          <WaysInPanel
+            ways={ways}
+            active={cycle.active}
+            reduced={cycle.reduced}
+            onHold={cycle.setHeld}
+            onFocusWay={cycle.setActive}
+          />
+
+          <Box
+            sx={{
+              position: 'relative',
+              isolation: 'isolate',
+              p: { xs: '32px 24px 40px', md: '56px 56px 64px' },
+              minHeight: { md: 380 },
+            }}
+          >
+            <GridFloor paused={cycle.still} />
+
+            <Box sx={{ position: 'relative', zIndex: 1, maxWidth: 560 }}>
               <Box
-                component="p"
-                sx={{ m: 0, fontSize: '15px', lineHeight: 1.6, color: 'rgba(255,255,255,0.65)' }}
+                component="h2"
+                id="ways-heading"
+                sx={{
+                  m: 0,
+                  fontSize: 'clamp(30px, 3.4vw, 44px)',
+                  fontWeight: 500,
+                  letterSpacing: '-0.03em',
+                  lineHeight: 1.08,
+                }}
               >
-                <Box component="strong" sx={{ color: '#fff', fontWeight: 600 }}>
-                  {tile.name}
-                </Box>{' '}
-                {tile.body}
+                {copy.title}
               </Box>
-              {tile.command ? <CopyCommand command={tile.command} /> : null}
+
               <Box
-                component="a"
-                href={tile.href}
-                {...(tile.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                sx={BUTTON_SX}
+                component="ul"
+                sx={{ listStyle: 'none', m: 0, p: 0, mt: '28px', display: 'grid', gap: '14px' }}
               >
-                {tile.button}
+                {ways.map((way, i) => {
+                  const on = cycle.reduced || i === cycle.active;
+                  return (
+                    <Box
+                      component="li"
+                      key={way.name}
+                      sx={{
+                        pl: '16px',
+                        borderLeft: '2px solid',
+                        transition: 'border-color 400ms ease, opacity 400ms ease',
+                      }}
+                      style={{
+                        borderColor: on ? 'rgba(125,211,252,0.9)' : 'rgba(255,255,255,0.12)',
+                        opacity: on ? 1 : 0.6,
+                      }}
+                    >
+                      <Box
+                        component="p"
+                        sx={{ m: 0, fontSize: '15.5px', lineHeight: 1.55, color: TEXT_MUTED }}
+                      >
+                        <Box component="strong" sx={{ color: '#fff', fontWeight: 600 }}>
+                          {way.name}
+                        </Box>{' '}
+                        {way.body}
+                      </Box>
+                      {way.command ? (
+                        <Box sx={{ mt: '10px', maxWidth: 380 }}>
+                          <CopyCommand command={way.command} />
+                        </Box>
+                      ) : null}
+                    </Box>
+                  );
+                })}
               </Box>
             </Box>
-          ))}
+          </Box>
         </Box>
-      </Inner>
-    </SectionRoot>
+      </Box>
+    </Box>
   );
 };
 
