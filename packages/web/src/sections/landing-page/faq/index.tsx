@@ -50,13 +50,13 @@ const ToggleIcon = ({ open }: { open: boolean }) => (
 /* ------------------------------------------------------------------ */
 
 const Accordion = styled(MuiAccordion)({
-  background: '#fff',
+  background: 'var(--surface)',
   boxShadow: 'none !important',
-  border: '1px solid #e8e8ec',
+  border: '1px solid var(--border)',
   borderRadius: '16px !important',
   overflow: 'hidden',
   '&::before': { display: 'none' },
-  '&.Mui-expanded': { margin: 0, background: '#fff' },
+  '&.Mui-expanded': { margin: 0, background: 'var(--surface)' },
 });
 
 const AccordionSummary = styled(MuiAccordionSummary)({
@@ -94,7 +94,7 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
     <Box
       component="section"
       aria-labelledby="faq-heading"
-      sx={{ bgcolor: '#FAFAFB', pt: { xs: '40px', md: '56px' }, pb: { xs: '80px', md: '110px' } }}
+      sx={{ pt: { xs: '40px', md: '56px' }, pb: { xs: '80px', md: '110px' } }}
       {...sectionProps}
     >
       <Box sx={{ maxWidth: 1200, mx: 'auto', px: 3 }}>
@@ -109,7 +109,7 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
               fontWeight: 500,
               letterSpacing: '-0.03em',
               lineHeight: 1.04,
-              color: '#0a0a0b',
+              color: 'var(--ink)',
               maxWidth: '22ch',
             }}
           >
@@ -123,7 +123,7 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
                 m: 0,
                 mt: '14px',
                 fontSize: '15px',
-                color: '#6b6b76',
+                color: 'var(--muted)',
                 lineHeight: 1.6,
                 maxWidth: '60ch',
               }}
@@ -163,8 +163,8 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
                               width: 28,
                               height: 28,
                               borderRadius: '50%',
-                              bgcolor: '#0a0a0b',
-                              color: '#fff',
+                              bgcolor: 'var(--accent)',
+                              color: 'var(--on-brand)',
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',
@@ -180,7 +180,7 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
                             fontSize: '15px',
                             fontWeight: 500,
                             letterSpacing: '-0.01em',
-                            color: '#0a0a0b',
+                            color: 'var(--ink)',
                             lineHeight: 1.4,
                             pr: 1,
                           }}
@@ -194,7 +194,7 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
                           sx={{
                             fontSize: '14px',
                             lineHeight: 1.65,
-                            color: '#6b6b76',
+                            color: 'var(--muted)',
                             whiteSpace: 'pre-line',
                           }}
                         >

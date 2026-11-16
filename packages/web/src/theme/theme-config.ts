@@ -44,20 +44,22 @@ export const themeConfig: ThemeConfig = {
    * Palette
    *************************************** */
   palette: {
+    // Keel's interaction accent (keel-frontend instrument kit): controls only.
     primary: {
-      lighter: '#cceeff',
-      light: '#66d1f8',
-      main: '#00aff7',
-      dark: '#008ac7',
-      darker: '#006897',
+      lighter: '#E6F0F0',
+      light: '#1F6F73',
+      main: '#1F6F73',
+      dark: '#195C60',
+      darker: '#155962',
       contrastText: '#FFFFFF',
     },
+    // Keel's brand teal: the logo, never a control.
     secondary: {
-      lighter: '#e1d9ff',
-      light: '#EFD6FF',
-      main: '#6E4BFF',
-      dark: '#7a65d9',
-      darker: '#5f4fb2',
+      lighter: '#B8D0D2',
+      light: '#155962',
+      main: '#155962',
+      dark: '#155962',
+      darker: '#155962',
       contrastText: '#FFFFFF',
     },
     info: {

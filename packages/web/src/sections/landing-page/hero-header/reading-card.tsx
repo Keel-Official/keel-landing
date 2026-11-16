@@ -14,7 +14,7 @@ import { shortIssuer, provenanceLine } from '../reading';
 
 // ----------------------------------------------------------------------
 
-const INK = '#0A0A0F';
+const INK = 'var(--ink)';
 
 // Numbers use the same mono face as the rest of the page.
 const MONO = {
@@ -23,7 +23,7 @@ const MONO = {
   fontVariantNumeric: 'tabular-nums',
 } as const;
 
-const LINE_SX = { fontSize: 14, color: '#6B6B76', lineHeight: 1.55 } as const;
+const LINE_SX = { fontSize: 14, color: 'var(--muted)', lineHeight: 1.55 } as const;
 
 /** Two fraction digits on screen, cut rather than rounded; the exact value on hover. */
 function Amount({ value }: { value: string }) {
@@ -94,11 +94,11 @@ export function ReadingCard({ data }: { data: LandingReading }) {
         maxWidth: 440,
         mx: 'auto',
         textAlign: 'left',
-        bgcolor: '#fff',
-        border: '1px solid rgba(10,10,15,0.08)',
+        bgcolor: 'var(--surface)',
+        border: '1px solid var(--border)',
         borderRadius: '24px',
         p: { xs: '18px', sm: '22px' },
-        boxShadow: '0 1px 2px rgba(10,10,15,0.04), 0 30px 60px -20px rgba(10,10,15,0.18)',
+        boxShadow: '0 1px 2px rgba(15,26,36,0.04), 0 30px 60px -20px rgba(15,26,36,0.18)',
         display: 'flex',
         flexDirection: 'column',
         gap: 1.5,
@@ -107,7 +107,7 @@ export function ReadingCard({ data }: { data: LandingReading }) {
       {/* Asset: mark, code, and the shortened issuer (the API serves no home domain). */}
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25 }}>
         <AssetMark code={asset.code} issuer={asset.issuer} size="md" />
-        <Typography sx={{ fontSize: 14, color: '#6B6B76' }}>
+        <Typography sx={{ fontSize: 14, color: 'var(--muted)' }}>
           <Box component="strong" sx={{ color: INK, fontWeight: 600 }}>
             {asset.code}
           </Box>{' '}
@@ -140,9 +140,9 @@ export function ReadingCard({ data }: { data: LandingReading }) {
         sx={{
           ...MONO,
           fontSize: 12.5,
-          color: '#6B6B76',
+          color: 'var(--muted)',
           pt: 1.5,
-          borderTop: '1px solid rgba(10,10,15,0.06)',
+          borderTop: '1px solid var(--border)',
         }}
       >
         {provenanceLine(data)}

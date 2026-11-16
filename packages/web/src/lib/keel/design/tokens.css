@@ -1,3 +1,42 @@
+/* keel-frontend's instrument palette (app/(marketing)/globals.css,
+   docs/08-instrument-design-kit.md), copied unchanged so the landing page and the Keel
+   site read as one product (Al, 16 November 2026). Near-black blue ink on a cool light
+   surface; one teal accent for everything a reader can press, never for risk; the risk
+   ramp below is a separate scale and the two never meet. */
+:root {
+  --ink: #0f1a24;
+  --ink-2: #33424e;
+  --muted: #5f6e7a;
+  /* Graphics only (tracks, fills, marks): it does not reach 4.5:1, so no text. */
+  --muted-2: #8a96a0;
+
+  --bg: #f7f8f9;
+  --surface: #ffffff;
+  --surface-2: #eef1f3;
+  --border: #dce1e5;
+  --border-strong: #c6cdd3;
+  --grid: #e8ecef;
+  --grid-line-ink: rgb(255 255 255 / 0.15);
+
+  /* Interaction only: buttons, links, focus rings. Never a risk signal. */
+  --accent: #1f6f73;
+  --accent-strong: #195c60;
+  --accent-tint: #e6f0f0;
+
+  /* The logo's own teal, and the colour inside its mark. Never a control. */
+  --brand: #155962;
+  --brand-amber: #e49f37;
+
+  /* Text on an ink panel, and on the brand surface. */
+  --on-ink: #e7edf1;
+  --on-ink-muted: #aab6bf;
+  --on-brand: #ffffff;
+  --on-brand-muted: #b8d0d2;
+
+  /* Ink as channels, for shadows only. */
+  --ink-rgb: 15 26 36;
+}
+
 /* The band encodings in tokens.ts name these variables. Values are the risk ramp of
    keel-frontend's marketing sheet (app/(marketing)/globals.css), copied unchanged, so a
    band has the same colour here as on the Keel site. Light theme only, as there. */
@@ -10,6 +49,10 @@
   --high-bg: #f8e9df;
   --critical: #b3202c;
   --critical-bg: #f7e1e2;
+  --low-line: #bcdcc6;
+  --medium-line: #e6d3a6;
+  --high-line: #eccbb6;
+  --critical-line: #e6bcc0;
 
   --band-low: var(--low);
   --band-low-ink: var(--low);
@@ -33,4 +76,16 @@
   --story-depth: #06b6d4;
   --story-sell: #8b5cf6;
   --story-pushed: #d946ef;
+}
+
+/* The hero's own palette (Al, 16 November 2026). Decoration in the hero backdrop only:
+   never text, never a control, never a band. Yellow and mint sit near the MEDIUM and
+   LOW hues, so they stay in the backdrop, away from the reading card's band. */
+:root {
+  --hero-violet: #6962ad;
+  --hero-plum: #6c22a6;
+  --hero-teal: #83c0c1;
+  --hero-mint: #96e9c6;
+  --hero-sky: #53cbf3;
+  --hero-sun: #ffde42;
 }

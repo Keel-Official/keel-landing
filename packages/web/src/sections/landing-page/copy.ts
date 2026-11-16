@@ -133,6 +133,23 @@ export const COPY = {
     ],
     ledger: 'Ledger {ledger}',
     methodology: 'Methodology {methodology}',
+    /** Spec wording (Al, 16 November 2026). Not in docs/landing-copy.md. */
+    showEvidence: 'Show the evidence',
+    /** [Validate] The rest below are labels the charts need; not in docs/landing-copy.md. */
+    hideEvidence: 'Hide the evidence',
+    chartLabel: 'Band of {code} over time',
+    tableCaption: 'Band of {code} at each recorded reading',
+    columns: ['Date', 'Band', 'Ledger', 'Methodology', 'Confidence'],
+    confidence: 'Confidence {confidence}',
+    unknown: 'unknown',
+    noPrice: 'No price.',
+    noRecording: 'No recording',
+    methodologyChange: 'Methodology {methodology}',
+    depthTitle: 'Sell-side depth, {quote}',
+    depthLabel: 'Depth within {delta}',
+    /** [Validate] Section 3's chart redraws on a loop, like the story (Al, 16 November 2026). */
+    pauseChart: 'Pause the chart',
+    playChart: 'Play the chart',
   },
   /** Section 4. */
   checked: {

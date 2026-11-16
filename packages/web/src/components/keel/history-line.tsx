@@ -90,7 +90,7 @@ export function HistoryLine({
           ref={pathRef}
           d={d}
           fill="none"
-          stroke="#fff"
+          stroke="var(--surface)"
           strokeWidth={1.5}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -109,7 +109,7 @@ export function HistoryLine({
             cx={last.x}
             cy={last.y}
             r={2.5}
-            fill="#fff"
+            fill="var(--surface)"
             style={{
               opacity: full && length !== null ? 1 : 0,
               transition: reduce ? 'none' : `opacity 200ms ease ${DRAW_MS}ms`,

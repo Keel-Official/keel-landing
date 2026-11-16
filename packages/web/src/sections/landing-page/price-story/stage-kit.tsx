@@ -20,11 +20,11 @@ export const LABEL_Y = 322;
  * ink and muted colours, never a story colour.
  */
 export const C = {
-  ink: '#0A0A0F',
-  ink2: '#2A2A33',
-  muted: '#6B6B76',
-  line: 'rgba(10,10,15,0.10)',
-  soft: '#C9CDD4',
+  ink: 'var(--ink)',
+  ink2: 'var(--ink-2)',
+  muted: 'var(--muted)',
+  line: 'var(--border)',
+  soft: 'var(--muted-2)',
   price: 'var(--story-price)',
   depth: 'var(--story-depth)',
   sell: 'var(--story-sell)',
@@ -210,10 +210,10 @@ export function FloatCard({
       <Box
         style={reveal(show, instant, delayMs)}
         sx={{
-          bgcolor: '#fff',
-          border: '1px solid rgba(10,10,15,0.08)',
+          bgcolor: 'var(--surface)',
+          border: '1px solid var(--border)',
           borderRadius: u(12),
-          boxShadow: '0 1px 2px rgba(10,10,15,0.04), 0 8px 24px -8px rgba(10,10,15,0.12)',
+          boxShadow: '0 1px 2px rgba(15,26,36,0.04), 0 8px 24px -8px rgba(15,26,36,0.12)',
           px: u(12),
           py: u(9),
           color: C.ink,

@@ -59,7 +59,7 @@ function SourceRow({ glyph, children }: { glyph: 'book' | 'pool'; children: stri
           width: u(18),
           height: u(18),
           borderRadius: u(5),
-          bgcolor: 'rgba(10,10,15,0.05)',
+          bgcolor: 'var(--surface-2)',
           display: 'grid',
           placeItems: 'center',
         }}

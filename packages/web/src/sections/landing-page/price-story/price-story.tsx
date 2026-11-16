@@ -71,7 +71,6 @@ export function PriceStory({ depth }: PriceStoryProps) {
       ref={timeline.rootRef}
       aria-labelledby="how-it-works-heading"
       sx={{
-        bgcolor: '#FAFAFB',
         pt: { xs: '80px', md: '110px' },
         pb: { xs: '56px', md: '96px' },
         scrollMarginTop: { xs: '64px', lg: '72px' },
@@ -87,7 +86,7 @@ export function PriceStory({ depth }: PriceStoryProps) {
             fontWeight: 500,
             letterSpacing: '-0.03em',
             lineHeight: 1.04,
-            color: '#0a0a0b',
+            color: 'var(--ink)',
           }}
         >
           {copy.title}

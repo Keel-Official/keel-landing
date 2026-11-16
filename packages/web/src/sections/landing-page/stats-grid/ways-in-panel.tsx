@@ -138,7 +138,7 @@ export function WaysInPanel({ ways, active, reduced, onHold, onFocusWay }: WaysI
                   <Box
                     component="span"
                     aria-hidden="true"
-                    sx={{ fontSize: '12px', fontWeight: 600, color: 'rgba(10,20,40,0.7)' }}
+                    sx={{ fontSize: '12px', fontWeight: 600, color: 'rgba(15,26,36,0.7)' }}
                   >
                     {way.name}
                   </Box>
@@ -165,13 +165,13 @@ export function WaysInPanel({ ways, active, reduced, onHold, onFocusWay }: WaysI
                     fontWeight: 600,
                     whiteSpace: 'nowrap',
                     textDecoration: 'none',
-                    bgcolor: '#fff',
-                    color: '#0A0A0F',
+                    bgcolor: 'var(--surface)',
+                    color: 'var(--accent)',
                     boxShadow:
-                      '0 1px 2px rgba(10,20,40,0.08), 0 10px 24px -10px rgba(10,20,40,0.35)',
+                      '0 1px 2px rgba(15,26,36,0.08), 0 10px 24px -10px rgba(15,26,36,0.35)',
                     transition: 'transform 150ms',
                     '&:hover': { transform: 'translateY(-1px)' },
-                    '&:focus-visible': { outline: '2px solid #0A0A0F', outlineOffset: '3px' },
+                    '&:focus-visible': { outline: '2px solid var(--accent)', outlineOffset: '3px' },
                   }}
                 >
                   {way.button}
@@ -202,7 +202,7 @@ export function WaysInPanel({ ways, active, reduced, onHold, onFocusWay }: WaysI
               sx={{
                 height: 4,
                 borderRadius: 2,
-                bgcolor: i === active ? 'rgba(10,20,40,0.75)' : 'rgba(10,20,40,0.2)',
+                bgcolor: i === active ? 'rgba(15,26,36,0.75)' : 'rgba(15,26,36,0.2)',
                 width: i === active ? 16 : 4,
                 transition: 'width 300ms ease, background-color 300ms ease',
               }}

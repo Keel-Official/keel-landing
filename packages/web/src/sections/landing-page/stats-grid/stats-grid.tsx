@@ -47,7 +47,14 @@ function CopyCommand({ command }: { command: string }) {
     >
       <Box
         component="code"
-        sx={{ ...MONO, fontSize: '13px', color: '#fff', flex: 1, minWidth: 0, overflowX: 'auto' }}
+        sx={{
+          ...MONO,
+          fontSize: '13px',
+          color: 'var(--on-ink)',
+          flex: 1,
+          minWidth: 0,
+          overflowX: 'auto',
+        }}
       >
         {command}
       </Box>
@@ -62,7 +69,7 @@ function CopyCommand({ command }: { command: string }) {
           border: '1px solid rgba(255,255,255,0.16)',
           borderRadius: '8px',
           background: 'transparent',
-          color: 'rgba(255,255,255,0.85)',
+          color: 'var(--on-ink)',
           fontSize: '12px',
           fontWeight: 500,
           px: '10px',
@@ -79,8 +86,8 @@ function CopyCommand({ command }: { command: string }) {
 // ----------------------------------------------------------------------
 
 /** The card's dark side and its text. */
-const CARD_BG = '#151922';
-const TEXT_MUTED = 'rgba(255,255,255,0.55)';
+const CARD_BG = 'var(--ink)';
+const TEXT_MUTED = 'var(--on-ink-muted)';
 
 /**
  * Which way in is at the front of the panel. It moves on every `WAY_MS` and round again
@@ -171,7 +178,7 @@ export const StatsGrid: React.FC<StatsGridProps> = ({ assetCount, ...props }) =>
       component="section"
       aria-labelledby="ways-heading"
       {...props}
-      sx={{ bgcolor: '#FAFAFB', py: { xs: '64px', md: '104px' } }}
+      sx={{ py: { xs: '64px', md: '104px' } }}
     >
       <Box sx={{ maxWidth: 1200, mx: 'auto', px: 3 }}>
         <Box
@@ -182,8 +189,8 @@ export const StatsGrid: React.FC<StatsGridProps> = ({ assetCount, ...props }) =>
             borderRadius: { xs: '20px', md: '24px' },
             overflow: 'hidden',
             bgcolor: CARD_BG,
-            color: '#fff',
-            boxShadow: '0 30px 60px -30px rgba(10,15,30,0.45)',
+            color: 'var(--on-ink)',
+            boxShadow: '0 30px 60px -30px rgba(15,26,36,0.45)',
           }}
         >
           <WaysInPanel
@@ -243,7 +250,7 @@ export const StatsGrid: React.FC<StatsGridProps> = ({ assetCount, ...props }) =>
                         component="p"
                         sx={{ m: 0, fontSize: '15.5px', lineHeight: 1.55, color: TEXT_MUTED }}
                       >
-                        <Box component="strong" sx={{ color: '#fff', fontWeight: 600 }}>
+                        <Box component="strong" sx={{ color: 'var(--on-ink)', fontWeight: 600 }}>
                           {way.name}
                         </Box>{' '}
                         {way.body}

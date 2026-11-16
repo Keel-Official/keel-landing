@@ -44,7 +44,7 @@ type Mark = 'up' | 'down' | 'done' | null;
 
 function StatusRow({ label, mark, instant }: { label: string; mark: Mark; instant: boolean }) {
   const glyph = mark === 'up' ? '↑' : mark === 'down' ? '↓' : mark === 'done' ? '✓' : '';
-  const tint = mark === 'down' ? C.ink2 : mark ? '#fff' : 'transparent';
+  const tint = mark === 'down' ? C.ink2 : mark ? 'var(--on-brand)' : 'transparent';
   const bg =
     mark === 'up' ? 'var(--story-pushed)' : mark === 'done' ? 'var(--story-price)' : 'transparent';
 
@@ -68,7 +68,7 @@ function StatusRow({ label, mark, instant }: { label: string; mark: Mark; instan
           border: `1px solid ${mark === 'down' ? C.line : 'transparent'}`,
         }}
         style={{
-          backgroundColor: mark === 'down' ? '#fff' : bg,
+          backgroundColor: mark === 'down' ? 'var(--surface)' : bg,
           color: tint,
           transform: mark ? 'scale(1)' : 'scale(0.6)',
           transition: tr(instant, `transform 500ms ${SPRING}, background-color 300ms ease`),

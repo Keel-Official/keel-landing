@@ -24,7 +24,7 @@ export const CtaImage: React.FC<CtaImageProps> = (sectionProps) => (
       position: 'relative',
       overflow: 'hidden',
       isolation: 'isolate',
-      background: '#0A0A0F',
+      background: 'var(--ink)',
       pt: { xs: '80px', md: '110px' },
       pb: { xs: '80px', md: '120px' },
       textAlign: 'center',
@@ -88,7 +88,7 @@ export const CtaImage: React.FC<CtaImageProps> = (sectionProps) => (
           fontWeight: 500,
           letterSpacing: '-0.03em',
           lineHeight: 1.08,
-          color: '#fff',
+          color: 'var(--on-ink)',
         }}
       >
         {COPY.closing.title}
@@ -113,13 +113,13 @@ export const CtaImage: React.FC<CtaImageProps> = (sectionProps) => (
             height: 48,
             px: '24px',
             borderRadius: '999px',
-            bgcolor: '#fff',
-            color: '#0A0A0F',
+            bgcolor: 'var(--accent)',
+            color: 'var(--on-brand)',
             fontSize: '14px',
             fontWeight: 500,
             textDecoration: 'none',
             transition: 'background 150ms, transform 150ms',
-            '&:hover': { bgcolor: 'rgba(255,255,255,0.92)', transform: 'translateY(-1px)' },
+            '&:hover': { bgcolor: 'var(--accent-strong)', transform: 'translateY(-1px)' },
           }}
         >
           {COPY.closing.primaryCta}
@@ -134,7 +134,7 @@ export const CtaImage: React.FC<CtaImageProps> = (sectionProps) => (
             px: '24px',
             borderRadius: '999px',
             bgcolor: 'rgba(255,255,255,0.08)',
-            color: '#fff',
+            color: 'var(--on-ink)',
             fontSize: '14px',
             fontWeight: 500,
             textDecoration: 'none',

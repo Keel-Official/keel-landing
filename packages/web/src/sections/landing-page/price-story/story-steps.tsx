@@ -12,15 +12,21 @@ import { MONO, EASE } from './stage-kit';
 
 // ----------------------------------------------------------------------
 
-const INK = '#0a0a0b';
-const BODY = '#2A2A33';
-const DIM = '#9A9AA3';
-const LINE = 'rgba(10,10,15,0.10)';
+const INK = 'var(--ink)';
+const BODY = 'var(--ink-2)';
+const DIM = 'var(--muted)';
+/**
+ * The steps sit straight on the page's moving gradient, so their lines are ink at low
+ * strength rather than a solid grey: a solid light line reads as a pale stripe over the
+ * colour, a translucent one takes on the colour under it.
+ */
+const LINE = 'color-mix(in srgb, var(--ink) 14%, transparent)';
 
 const visuallyHidden = {
   position: 'absolute',
-  width: 1,
-  height: 1,
+  // In MUI `sx` a bare 1 means 100%; this must be one pixel.
+  width: '1px',
+  height: '1px',
   overflow: 'hidden',
   clip: 'rect(0 0 0 0)',
   whiteSpace: 'nowrap',
@@ -64,11 +70,12 @@ export function StorySteps({ timeline, bodies, steps }: StoryStepsProps) {
                 aria-hidden="true"
                 sx={{
                   position: 'absolute',
-                  top: -1,
+                  top: '-1.5px',
                   left: 0,
                   right: 0,
-                  height: '1.5px',
-                  bgcolor: INK,
+                  height: '2px',
+                  // Time left in the open step, in Keel's teal, like its controls.
+                  bgcolor: 'var(--accent)',
                   transformOrigin: '0 50%',
                 }}
                 style={{ transform: `scaleX(${open ? (reduced ? 1 : progress) : 0})` }}
@@ -93,11 +100,11 @@ export function StorySteps({ timeline, bodies, steps }: StoryStepsProps) {
                     pb: open ? '10px' : { xs: '18px', md: '22px' },
                     transition: `padding 450ms ${EASE}`,
                     '&:focus-visible': {
-                      outline: '2px solid var(--story-price)',
+                      outline: '2px solid var(--accent)',
                       outlineOffset: '4px',
                       borderRadius: '6px',
                     },
-                    '&:hover .title': { color: open ? INK : '#55555F' },
+                    '&:hover .title': { color: open ? INK : 'var(--ink-2)' },
                   }}
                 >
                   <Box
@@ -177,14 +184,14 @@ export function StorySteps({ timeline, bodies, steps }: StoryStepsProps) {
             cursor: 'pointer',
             mt: 0,
             fontSize: 13,
-            color: '#6B6B76',
+            color: 'var(--muted)',
             borderTop: `1px solid ${LINE}`,
             display: 'block',
             width: '100%',
             pt: '14px',
-            '&:hover': { color: INK },
+            '&:hover': { color: 'var(--accent)' },
             '&:focus-visible': {
-              outline: '2px solid var(--story-price)',
+              outline: '2px solid var(--accent)',
               outlineOffset: '4px',
               borderRadius: '6px',
             },

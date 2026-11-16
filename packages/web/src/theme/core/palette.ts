@@ -90,13 +90,15 @@ export const grey = createPaletteChannel(themeConfig.palette.grey);
 
 // Text color
 export const text = {
-  light: createPaletteChannel({ primary: grey[800], secondary: grey[600], disabled: grey[500] }),
+  // Keel's ink, muted and graphic tones (keel-frontend instrument kit).
+  light: createPaletteChannel({ primary: '#0F1A24', secondary: '#5F6E7A', disabled: '#8A96A0' }),
   dark: createPaletteChannel({ primary: '#FFFFFF', secondary: grey[500], disabled: grey[600] }),
 };
 
 // Background color
 export const background = {
-  light: createPaletteChannel({ paper: '#FFFFFF', default: '#FFFFFF', neutral: grey[200] }),
+  // Keel's surface, page and quiet panel tones.
+  light: createPaletteChannel({ paper: '#FFFFFF', default: '#F7F8F9', neutral: '#EEF1F3' }),
   dark: createPaletteChannel({ paper: grey[800], default: grey[900], neutral: '#28323D' }),
 };
 

@@ -20,7 +20,7 @@ export function FooterSection({ sx, provenance }: FooterProps = {}) {
       component="footer"
       sx={[
         {
-          bgcolor: '#0c0c0e',
+          bgcolor: 'var(--ink)',
           position: 'relative',
           '&::before': {
             content: '""',
@@ -29,8 +29,7 @@ export function FooterSection({ sx, provenance }: FooterProps = {}) {
             left: 0,
             right: 0,
             height: '1px',
-            background:
-              'linear-gradient(90deg, transparent 0%, #00aff7 25%, #6E4BFF 55%, #f8279c 80%, transparent 100%)',
+            background: 'var(--grid-line-ink)',
           },
         },
         ...(Array.isArray(sx) ? sx : sx ? [sx] : []),
@@ -57,14 +56,22 @@ export function FooterSection({ sx, provenance }: FooterProps = {}) {
           {/* Brand column */}
           <Box>
             <Typography
-              sx={{ fontSize: 20, fontWeight: 600, letterSpacing: '-0.02em', color: '#fff' }}
+              sx={{
+                fontSize: 20,
+                fontWeight: 600,
+                letterSpacing: '-0.02em',
+                color: 'var(--on-ink)',
+              }}
             >
               Keel
             </Typography>
 
             <Stack sx={{ mt: '14px', gap: '4px' }}>
               {COPY.closing.footerLines.map((line) => (
-                <Typography key={line} sx={{ fontSize: 14, color: '#8a8a93', lineHeight: 1.6 }}>
+                <Typography
+                  key={line}
+                  sx={{ fontSize: 14, color: 'var(--on-ink-muted)', lineHeight: 1.6 }}
+                >
                   {line}
                 </Typography>
               ))}
@@ -87,10 +94,10 @@ export function FooterSection({ sx, provenance }: FooterProps = {}) {
                   sx={{
                     display: 'block',
                     fontSize: 14,
-                    color: '#cfcfd6',
+                    color: 'var(--on-ink)',
                     py: '5px',
                     textDecoration: 'none',
-                    '&:hover': { color: '#fff' },
+                    '&:hover': { color: 'var(--on-brand)' },
                   }}
                 >
                   {label}
@@ -106,13 +113,13 @@ export function FooterSection({ sx, provenance }: FooterProps = {}) {
             sx={{
               mt: '64px',
               pt: '28px',
-              borderTop: '1px solid rgba(255,255,255,0.08)',
+              borderTop: '1px solid var(--grid-line-ink)',
             }}
           >
             <Typography
               sx={{
                 fontSize: 13,
-                color: '#8a8a93',
+                color: 'var(--on-ink-muted)',
                 fontFamily: '"Geist Mono", ui-monospace, monospace',
               }}
             >

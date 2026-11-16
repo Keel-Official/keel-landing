@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import { assetIcon, VENUE_ICONS } from '@/lib/keel/assets/icons';
 
 import Box from '@mui/material/Box';
 
@@ -36,6 +37,18 @@ const RUNGS = [
 const START = [110, BASE_Y] as const;
 const TOP = [450, 136] as const;
 const PATH = `M${START[0]},${START[1]} L250,${BASE_Y} C300,${BASE_Y} 318,${BASE_Y - 10} 335,${BASE_Y - 55} C352,${BASE_Y - 105} 372,${TOP[1]} ${TOP[0]},${TOP[1]}`;
+
+/** USTRY as the story names it: the asset Keel monitors, matched on code and issuer. */
+const USTRY_ISSUER = 'GCRYUGD5NVARGXT56XEZI5CIFCQETYHAPQQTHO2O3IQZTHDH4LATMYWC';
+
+/** The incident card's two chips, each with its mark: the asset, and where it was used. */
+const INCIDENT_CHIPS = [
+  {
+    label: COPY.story.stage.incidentAsset,
+    icon: assetIcon(COPY.story.stage.incidentAsset, USTRY_ISSUER)?.src ?? null,
+  },
+  { label: COPY.story.stage.incidentVenue, icon: VENUE_ICONS.blend.src },
+] as const;
 
 /** The dot shifts from the price colour towards the pushed colour as it climbs. */
 function dotColour(y: number) {
@@ -157,13 +170,30 @@ export function SceneIncident({ beat, elapsed, instant }: SceneProps) {
       <FloatCard x={36} y={30} anchor="belowStart" show={beat >= 1} instant={instant}>
         <Box sx={{ color: C.muted, fontSize: u(10.5), mb: u(6) }}>{copy.stage.incidentDate}</Box>
         <Box sx={{ display: 'flex', gap: u(6), fontWeight: 600 }}>
-          {[copy.stage.incidentAsset, copy.stage.incidentVenue].map((chip) => (
+          {INCIDENT_CHIPS.map((chip) => (
             <Box
-              key={chip}
+              key={chip.label}
               component="span"
-              sx={{ px: u(8), py: u(3), borderRadius: u(6), bgcolor: 'rgba(10,10,15,0.05)' }}
+              sx={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: u(5),
+                pl: u(4),
+                pr: u(8),
+                py: u(3),
+                borderRadius: u(6),
+                bgcolor: 'var(--surface-2)',
+              }}
             >
-              {chip}
+              {chip.icon ? (
+                <Box
+                  component="img"
+                  src={chip.icon}
+                  alt=""
+                  sx={{ width: u(16), height: u(16), borderRadius: u(4), objectFit: 'contain' }}
+                />
+              ) : null}
+              {chip.label}
             </Box>
           ))}
         </Box>

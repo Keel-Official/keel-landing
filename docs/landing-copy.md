@@ -130,6 +130,8 @@ Link: Explore it yourself (opens the dashboard)
 
 ## 3. Read Keel at a glance
 
+Motion (Al, 2026-11-16): the band chart draws left to right in 1.6 s, stays up, clears and draws again, about seven seconds a turn, like a step of the section 2 story. Hovering or keyboard-focusing the chart holds it drawn; "Pause the chart" stops it; it stops off screen and in a hidden tab; with reduced motion it is drawn and still. The band badge settles once, after the first draw.
+
 **Headline**
 One word first. The evidence when you want it.
 

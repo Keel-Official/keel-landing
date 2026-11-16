@@ -134,7 +134,7 @@ export function SceneLastTrade({ beat, elapsed, instant }: SceneProps) {
               cx={NEXT[0]}
               cy={NEXT[1]}
               r={9}
-              fill="#fff"
+              fill="var(--surface)"
               stroke={C.muted}
               strokeWidth={1.5}
               strokeDasharray="3 3"
