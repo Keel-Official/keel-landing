@@ -24,3 +24,13 @@
   --band-critical-ink: var(--critical);
   --band-critical-surface: var(--critical-bg);
 }
+
+/* DEC-001: the "Price is not liquidity" illustration palette. Marks on its stage only,
+   never text, never a finding. Used by sections/landing-page/price-story/ and nowhere
+   else; band tokens are never used there. */
+:root {
+  --story-price: #3b82f6;
+  --story-depth: #06b6d4;
+  --story-sell: #8b5cf6;
+  --story-pushed: #d946ef;
+}

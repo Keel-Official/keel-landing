@@ -1,5 +1,5 @@
 import LandingPage from '@/sections/landing-page';
-import { depthStep } from '@/lib/keel/landing/story';
+import { depthPanels } from '@/lib/keel/landing/story';
 import { readHeroHistory } from '@/lib/keel/landing/history';
 import { readHero, readAssetCount } from '@/lib/keel/landing/readings';
 
@@ -10,5 +10,7 @@ export default async function Page() {
     readHeroHistory(),
     readAssetCount(),
   ]);
-  return <LandingPage hero={hero} depth={depthStep()} history={history} assetCount={assetCount} />;
+  return (
+    <LandingPage hero={hero} depth={depthPanels()} history={history} assetCount={assetCount} />
+  );
 }

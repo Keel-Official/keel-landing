@@ -64,9 +64,11 @@ Secondary: See how it works
 
 ## 2. Price is not liquidity (how it works)
 
-Six steps in a horizontal track, one idea per slide. The track plays on its own: each step holds for 3 seconds, then slides to the next in 0.8 seconds, and after the last it returns to the first. It holds while the reader hovers over it, waits while it is off screen or the tab is hidden, and stops while the reader focuses into it or touches it, playing again once they leave the section. The reader can still swipe, scroll sideways or use the arrow keys. With reduced motion it does not play. There are no controls. The text must make sense with motion turned off.
+Six steps in two parts of three, each shown as an accordion beside a stage that draws the open step. Part one (steps 1 to 3) has the steps on the left and the stage on the right; part two (steps 4 to 6) has the stage on the left and the steps on the right. When step 3 ends, the stage and the steps slide past each other to swap sides and step 4 opens; when step 6 ends they swap back and step 1 opens, round and round (Al, 2026-11-16). On a phone the stage sits above the steps and the part's steps change in place. The open step shows its body, and a line along its top fills as its 7 seconds run; then the next step opens. It holds the open step while the reader hovers over the steps or focuses into them with the keyboard, and stops while the section is off screen or the tab is hidden. Clicking a step opens it and plays its scene from the start. A "Pause the story" button stops it. With reduced motion nothing plays: every scene shows its final frame and steps open on click. The text must make sense with motion turned off; the stage is hidden from screen readers.
 
-Each slide is named "Step {n} of 6" for screen readers.
+Every scene ends on one more beat: a caption beside the dot that says what the dot is doing. The caption lines are listed under each step as "Dot". [Validate]
+
+Each step is named "Step {n} of 6" for screen readers.
 
 ### Step 1
 
@@ -74,6 +76,7 @@ Each slide is named "Step {n} of 6" for screen readers.
 It tells you what someone just paid. It does not tell you what the next seller will get.
 
 Visual: a row of past trades as dots; the last one is solid and labelled "Last trade"; an empty dashed circle after it is labelled "Next trade". No numbers.
+Dot: The price: what someone just paid.
 
 ### Step 2
 
@@ -81,6 +84,8 @@ Visual: a row of past trades as dots; the last one is solid and labelled "Last t
 Behind every price on Stellar are open offers to buy and sell, in the order book and in liquidity pools. The more of them there are, the harder the price is to move. [Validate]
 
 Visual: the price as a solid dot labelled "Price"; small blocks for open offers stack up on both sides of it, taller further from the price, labelled "Offers to buy" and "Offers to sell". No numbers.
+Card: "Order book", "Liquidity pools".
+Dot: The price, held up by the offers around it.
 
 ### Step 3
 
@@ -89,7 +94,8 @@ Visual: the price as a solid dot labelled "Price"; small blocks for open offers 
 
 Visual: two depth curves stepping through 2%, 5% and 10%. Discrete steps from the API's rungs only, no slider.
 Data: a fixture shaped like `/asset/{assetId}/depth`, so this step still works when the API is down. Each reading shows its own ledger and methodology version.
-[Pending] Which two assets. Earlier proposal: XLM and USTRY.
+Assets: USTRY is the deep market and XLM the thin one, from the saved readings at 5% (Al, 2026-11-16). Each market's card shows its 2%, 5% and 10% figures, its ledger and methodology. Bar shapes sketch the readings and say so: "Bar shapes sketch the saved readings, not to scale." [Validate]
+Dot: The line: {range} below the price.
 
 ### Step 4
 
@@ -97,12 +103,16 @@ Data: a fixture shaped like `/asset/{assetId}/depth`, so this step still works w
 A lending app values your collateral at the price it sees. If that price is cheap to push up, someone can borrow far more than their collateral is really worth. [Validate]
 
 Visual: the collateral value inflates, a loan goes out, the price falls back.
+Card: "Lending app" with Price, Collateral value and Loan, each ticked as it happens. No numbers.
+Dot: Pushed up, then back. The loan stays out.
 
 ### Step 5
 
 **It happened on Stellar.**
 On 22 February 2026, USTRY, a thinly traded token, was pushed to roughly 100 times its price and used as collateral on Blend. {incident figure} [Validate]
 
+Visual: the price climbs a 1×, 10×, 100× ladder. Card: "22 February 2026", "USTRY", "Blend". No ledger or figure until confirmed.
+Dot: USTRY, pushed to roughly 100 times its price.
 Link: Read the backtest report
 [Pending] The exploit ledger. Project notes say 61,249,278; the keel-mcp README calls ledger 61,340,263 "the Blend exploit". Confirm which is the exploit ledger, and what 61,249,278 refers to, before any figure appears here.
 
@@ -112,6 +122,8 @@ Link: Read the backtest report
 Every 15 minutes, Keel reads Stellar's order books and liquidity pools and works out two limits. The selling limit: how much collateral the market can absorb in a forced sale. The manipulation limit: the point where pushing the price up costs less than the loan it would unlock. The lower of the two is the safe collateral size. [Validate]
 
 Visual: the two limits as two bars, the lower one marked.
+Card: "Every 15 minutes", "Order book", "Liquidity pools". Note: Illustration, not data.
+Dot: The lower limit: the safe collateral size.
 Link: Explore it yourself (opens the dashboard)
 
 ---

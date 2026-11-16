@@ -56,30 +56,70 @@ export const COPY = {
       {
         title: 'A price is only the last trade.',
         body: 'It tells you what someone just paid. It does not tell you what the next seller will get.',
+        /** [Validate] What the dot is doing, shown when the visual ends. */
+        dot: 'The price: what someone just paid.',
       },
       {
         title: 'What matters is what stands behind it.',
         body: 'Behind every price on Stellar are open offers to buy and sell, in the order book and in liquidity pools. The more of them there are, the harder the price is to move.',
+        /** [Validate] What the dot is doing, shown when the visual ends. */
+        dot: 'The price, held up by the offers around it.',
       },
       {
         title: 'Some markets are a slope. Some are a cliff.',
         body: '{deepAsset} can absorb {deepAmount} of selling before its price drops 5%. {thinAsset} can absorb {thinAmount}.',
+        /** [Validate] What the dot is doing, shown when the visual ends. */
+        dot: 'The line: {range} below the price.',
       },
       {
         title: 'Lending apps trust the price.',
         body: 'A lending app values your collateral at the price it sees. If that price is cheap to push up, someone can borrow far more than their collateral is really worth.',
+        /** [Validate] What the dot is doing, shown when the visual ends. */
+        dot: 'Pushed up, then back. The loan stays out.',
       },
       {
         title: 'It happened on Stellar.',
         // The deck's `{incident figure}` slot is dropped until the exploit ledger is confirmed.
         body: 'On 22 February 2026, USTRY, a thinly traded token, was pushed to roughly 100 times its price and used as collateral on Blend.',
+        /** [Validate] What the dot is doing, shown when the visual ends. */
+        dot: 'USTRY, pushed to roughly 100 times its price.',
       },
       {
         title: 'Keel measures the market behind the price.',
         body: "Every 15 minutes, Keel reads Stellar's order books and liquidity pools and works out two limits. The selling limit: how much collateral the market can absorb in a forced sale. The manipulation limit: the point where pushing the price up costs less than the loan it would unlock. The lower of the two is the safe collateral size.",
+        /** [Validate] What the dot is doing, shown when the visual ends. */
+        dot: 'The lower limit: the safe collateral size.',
       },
     ],
     position: 'Step {n} of 6',
+    /** Words drawn on the stage. From the steps above and the approved prototype. */
+    stage: {
+      lastTrade: 'Last trade',
+      nextTrade: 'Next trade',
+      price: 'Price',
+      offersToBuy: 'Offers to buy',
+      offersToSell: 'Offers to sell',
+      orderBook: 'Order book',
+      liquidityPools: 'Liquidity pools',
+      sellingAt: 'Selling it can absorb',
+      ledgerLine: 'Ledger {ledger}. Methodology {methodology}.',
+      unknown: 'unknown',
+      lendingApp: 'Lending app',
+      collateralValue: 'Collateral value',
+      loan: 'Loan',
+      incidentDate: '22 February 2026',
+      incidentAsset: 'USTRY',
+      incidentVenue: 'Blend',
+      every15: 'Every 15 minutes',
+      sellingLimit: 'Selling limit',
+      manipulationLimit: 'Manipulation limit',
+      safeSize: 'Safe collateral size',
+      illustration: 'Illustration, not data.',
+      /** [Validate] Under step 3's bars. */
+      sketch: 'Bar shapes sketch the saved readings, not to scale.',
+    },
+    pause: 'Pause the story',
+    play: 'Play the story',
   },
   /** Section 3. */
   glance: {
